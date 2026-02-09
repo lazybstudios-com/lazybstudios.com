@@ -2,99 +2,190 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
-    <meta name="theme-color" content="#FE2C55">
-    <meta name="apple-mobile-web-app-title" content="SampleFlow">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <meta name="mobile-web-app-capable" content="yes">
-    
-    <link rel="apple-touch-icon" href="icon.svg">
-    <link rel="icon" type="image/svg+xml" href="icon.svg">
-    <link rel="manifest" href="manifest.json">
-    
-    <title>SampleFlow</title>
-    
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <title>Lazy B Studios</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9IiMxYTFhMmUiLz48dGV4dCB4PSIyNTYiIHk9IjMwMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxCPC90ZXh0Pjwvc3ZnPg==">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --primary: #FE2C55; 
-            --dark: #121212; 
-            --bg: #F8F9FA; 
-            --surface: #FFFFFF; 
-            --green: #00C853; 
-            --yellow: #FFB300; 
-            --red: #FF3B30; 
-            --blue: #2196F3; 
-            --purple: #9C27B0; 
-            --border: #E0E0E0; 
-            --text-main: #121212;
-            --text-secondary: #666666;
-            --shadow: 0 4px 12px rgba(0,0,0,0.08); 
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        /* Dark Mode Variables */
-        [data-theme="dark"] {
-            --primary: #FF4066; 
-            --dark: #FFFFFF; 
-            --bg: #121212; 
-            --surface: #1E1E1E; 
-            --border: #333333; 
-            --text-main: #FFFFFF;
-            --text-secondary: #AAAAAA;
-            --shadow: 0 4px 12px rgba(0,0,0,0.3);
-        }
-        
-        * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-        
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; 
-            background: var(--bg); color: var(--text-main); overflow-x: hidden;
-            overscroll-behavior-y: contain; transition: background 0.3s, color 0.3s;
-        }
-
-        /* Landing Page Styles */
-        #landingPage {
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: #0f0f1a;
+            color: #ffffff;
             min-height: 100vh;
-            background: linear-gradient(135deg, #FE2C55 0%, #FF6B8A 100%);
-            display: flex; flex-direction: column; padding: 20px 20px 140px 20px; 
         }
-        
-        .landing-content { max-width: 500px; width: 100%; text-align: center; color: white; margin: auto; }
 
-        .landing-sticky-bar {
-            position: fixed; bottom: 0; left: 0; right: 0; background: var(--surface);
-            padding: 20px; border-radius: 25px 25px 0 0; box-shadow: 0 -5px 20px rgba(0,0,0,0.15);
-            z-index: 100; display: flex; flex-direction: column; gap: 10px;
+        .hero {
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px 40px;
+            background: linear-gradient(160deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
         }
-        
-        .landing-btn {
-            width: 100%; padding: 16px; border: none; border-radius: 15px;
-            font-size: 1.1rem; font-weight: 700; cursor: pointer;
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            width: 400px;
+            height: 400px;
+            background: radial-gradient(circle, rgba(255,160,0,0.08) 0%, transparent 70%);
+            top: -100px;
+            right: -100px;
+            border-radius: 50%;
         }
-        
-        .btn-primary { background: var(--primary); color: white; }
+
+        .logo-text {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 3rem;
+            font-weight: 400;
+            margin-bottom: 12px;
+            letter-spacing: -1px;
+        }
+
+        .tagline {
+            font-size: 1.1rem;
+            color: rgba(255,255,255,0.6);
+            max-width: 400px;
+            line-height: 1.6;
+        }
+
+        .apps-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        .section-label {
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: rgba(255,255,255,0.4);
+            margin-bottom: 20px;
+        }
+
+        .app-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: #1a1a2e;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 16px;
+            text-decoration: none;
+            color: white;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .app-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(255,255,255,0.2);
+        }
+
+        .app-icon {
+            width: 56px;
+            height: 56px;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.6rem;
+            flex-shrink: 0;
+        }
+
+        .app-info { flex: 1; }
+
+        .app-name {
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .app-desc {
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.4;
+        }
+
+        .app-arrow {
+            color: rgba(255,255,255,0.3);
+            font-size: 1.2rem;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px;
+            border-top: 1px solid rgba(255,255,255,0.06);
+            color: rgba(255,255,255,0.3);
+            font-size: 0.8rem;
+        }
+
+        .footer a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+        }
+
+        .footer a:hover { color: rgba(255,255,255,0.7); }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.65rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 6px;
+            margin-left: 8px;
+            vertical-align: middle;
+        }
+
+        .badge-live { background: #2e7d32; color: white; }
+        .badge-soon { background: #ffa000; color: #1a1a2e; }
     </style>
 </head>
 <body>
-    <div id="landingPage">
-        <div class="landing-content">
-            <h1 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 10px;">SampleFlow</h1>
-            <p style="font-size: 1.1rem; opacity: 0.95; margin-bottom: 40px;">Never miss a brand deadline again.</p>
-            <div style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border-radius: 20px; padding: 30px; text-align: left;">
-                <p style="margin-bottom: 15px;">📦 Track all your samples</p>
-                <p style="margin-bottom: 15px;">⏰ Due date reminders</p>
-                <p>📊 Calendar & Analytics</p>
-            </div>
-        </div>
-        <div class="landing-sticky-bar">
-            <button class="landing-btn btn-primary" onclick="alert('Auth logic needed')">Create Free Account</button>
-            <button class="landing-btn" style="background: #eee;" onclick="alert('Auth logic needed')">Sign In</button>
-            <div style="text-align: center; margin-top: 10px;">
-                <a href="../index.html" style="color: #666; font-size: 0.85rem; text-decoration: none;">← Back to Lazy B Studios</a>
-            </div>
-        </div>
+
+    <div class="hero">
+        <div class="logo-text">Lazy B Studios</div>
+        <p class="tagline">Small tools, built with care. We make simple apps that solve real problems.</p>
     </div>
+
+    <div class="apps-section">
+        <div class="section-label">Our Apps</div>
+
+        <a href="https://golfhandicap.lazybstudios.com" class="app-card">
+            <div class="app-icon" style="background: #2e7d32;">&#9971;</div>
+            <div class="app-info">
+                <div class="app-name">Golf Tracker <span class="badge badge-live">LIVE</span></div>
+                <div class="app-desc">Track your WHS handicap index, post scores, and compete with friends in groups.</div>
+            </div>
+            <span class="app-arrow">&rarr;</span>
+        </a>
+
+        <a href="sampleflow/index.html" class="app-card">
+            <div class="app-icon" style="background: #FE2C55;">&#128230;</div>
+            <div class="app-info">
+                <div class="app-name">SampleFlow <span class="badge badge-soon">COMING SOON</span></div>
+                <div class="app-desc">Never miss a brand deadline again. Track samples, due dates, and analytics.</div>
+            </div>
+            <span class="app-arrow">&rarr;</span>
+        </a>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2026 Lazy B Studios. All rights reserved.</p>
+        <p style="margin-top: 8px;">
+            <a href="privacy.html">Privacy</a> &nbsp;&middot;&nbsp;
+            <a href="terms.html">Terms</a> &nbsp;&middot;&nbsp;
+            <a href="mailto:support@lazybstudios.com">Contact</a>
+        </p>
+    </div>
+
 </body>
 </html>
