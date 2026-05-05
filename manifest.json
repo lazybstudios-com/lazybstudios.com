@@ -1,0 +1,16 @@
+{
+  "short_name": "GolfTracker",
+  "name": "Golf Tracker | Lazy B Studios",
+  "icons": [
+    {
+      "src": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIGZpbGw9IiMyZTdkMzIiLz48Y2lyY2xlIGN4PSIyNTYiIGN5PSIyMTAiIHI9Ijk1IiBmaWxsPSIjZmZmZmZmIi8+PHBhdGggZD0iTTIzNiAyOTUgSDI3NiBMMjY2IDQzMCBIMjQ2IFoiIGZpbGw9IiNmZmZmZmYiLz48L3N2Zz4=",
+      "sizes": "512x512",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#2e7d32",
+  "background_color": "#f4f6f8"
+}

@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Golf Data Migration Tool</title>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #f5f5f5;
+    }
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h1 { color: #2d5a27; }
+    h2 { color: #333; margin-top: 0; }
+    .btn {
+      padding: 0.75rem 1.5rem;
+      border: none;
+      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .btn-primary { background: #2d5a27; color: white; }
+    .btn-secondary { background: #ddd; color: #333; }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    pre {
+      background: #1e1e1e;
+      color: #d4d4d4;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+      max-height: 400px;
+      overflow-y: auto;
+      font-size: 0.85rem;
+    }
+    .success { color: #28a745; }
+    .error { color: #dc3545; }
+    .warning { color: #e67c00; }
+    .info { color: #17a2b8; }
+    #log { white-space: pre-wrap; }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    th, td {
+      padding: 0.5rem;
+      border: 1px solid #ddd;
+      text-align: left;
+    }
+    th { background: #f0f0f0; }
+    select, input {
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      margin-right: 0.5rem;
+    }
+    .player-select {
+      margin: 1rem 0;
+      padding: 1rem;
+      background: #f9f9f9;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>⛳ Golf Data Migration Tool</h1>
+  
+  <div class="card">
+    <h2>Step 1: Check New App Authentication</h2>
+    <p>Make sure you're signed into the new Golf Handicap app first.</p>
+    <button class="btn btn-primary" onclick="checkNewAuth()">Check Auth Status</button>
+    <div id="auth-status"></div>
+  </div>
+
+  <div class="card">
+    <h2>Step 2: Fetch Data from Old Project</h2>
+    <p>This will read your existing golf data from the old Supabase project.</p>
+    <button class="btn btn-primary" onclick="fetchOldData()">Fetch Old Data</button>
+    <div id="old-data-status"></div>
+  </div>
+
+  <div class="card">
+    <h2>Step 3: Select Your Player</h2>
+    <p>Choose which player's rounds to migrate to your new account.</p>
+    <div id="player-selector" class="player-select">
+      <p>Fetch old data first to see available players.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Step 4: Review Data</h2>
+    <div id="data-preview">
+      <p>Click "Fetch Old Data" first to see what will be migrated.</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>Step 5: Migrate to New Project</h2>
+    <button class="btn btn-primary" onclick="migrateData()" id="migrate-btn" disabled>Migrate Data</button>
+    <div id="migrate-status"></div>
+  </div>
+
+  <div class="card">
+    <h2>Log</h2>
+    <pre id="log">Waiting for actions...</pre>
+  </div>
+
+<script>
+// OLD PROJECT (flextechla's Project - shared with Bill Reminder)
+const OLD_URL = 'https://lxxlrujrxtphozisppsq.supabase.co';
+const OLD_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imx4eGxydWpyeHRwaG96aXNwcHNxIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjcwNTg3MTIsImV4cCI6MjA4MjYzNDcxMn0.cwLpWtOP7LJm1B9zczskVMU2vPL6shSJFyTb0Ox2vh8';
+
+// NEW PROJECT (dedicated golf handicap)
+const NEW_URL = 'https://vonbibroncsxrgstetow.supabase.co';
+const NEW_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InZvbmJpYnJvbmNzeHJnc3RldG93Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3Njg1MjExMTQsImV4cCI6MjA4NDA5NzExNH0.z0x4uu-34dc2cpWK2CTZSGW9gY2a3pl-t1ANk7gyouk';
+
+const oldDb = window.supabase.createClient(OLD_URL, OLD_KEY);
+const newDb = window.supabase.createClient(NEW_URL, NEW_KEY);
+
+// Store fetched data
+let oldGolfData = null;
+let oldRounds = [];
+let oldPlayers = {};
+let selectedPlayerId = null;
+let newUserId = null;
+
+function log(message, type = '') {
+  const logEl = document.getElementById('log');
+  const timestamp = new Date().toLocaleTimeString();
+  const className = type ? `class="${type}"` : '';
+  logEl.innerHTML += `<span ${className}>[${timestamp}] ${message}</span>\n`;
+  logEl.scrollTop = logEl.scrollHeight;
+}
+
+function clearLog() {
+  document.getElementById('log').innerHTML = '';
+}
+
+async function checkNewAuth() {
+  log('Checking authentication on new project...', 'info');
+  const statusEl = document.getElementById('auth-status');
+  
+  const { data: { session }, error } = await newDb.auth.getSession();
+  
+  if (error) {
+    log('Auth error: ' + error.message, 'error');
+    statusEl.innerHTML = `<p class="error">❌ Error: ${error.message}</p>`;
+    return false;
+  }
+  
+  if (session) {
+    newUserId = session.user.id;
+    log('Authenticated as: ' + session.user.email, 'success');
+    statusEl.innerHTML = `<p class="success">✅ Signed in as <strong>${session.user.email}</strong></p>`;
+    return true;
+  } else {
+    log('Not authenticated. Please sign in to the main app first.', 'warning');
+    statusEl.innerHTML = `
+      <p class="warning">⚠️ Not signed in.</p>
+      <p>Please go to <a href="https://flextechla.github.io/golfhandicap/" target="_blank">Golf Handicap App</a>, sign in, then come back here.</p>
+    `;
+    return false;
+  }
+}
+
+async function fetchOldData() {
+  clearLog();
+  log('Starting data fetch from old project...', 'info');
+  
+  const statusEl = document.getElementById('old-data-status');
+  statusEl.innerHTML = '<p>Fetching...</p>';
+  
+  try {
+    // Fetch golf_data (JSONB storage with players and courses)
+    log('Fetching golf_data table...');
+    const { data: golfData, error: golfDataError } = await oldDb
+      .from('golf_data')
+      .select('*');
+    
+    if (golfDataError) {
+      log('Error fetching golf_data: ' + golfDataError.message, 'error');
+    } else {
+      oldGolfData = golfData;
+      log(`Found ${golfData?.length || 0} golf_data records`, 'success');
+      
+      // Extract players
+      if (golfData && golfData.length > 0 && golfData[0].all_players) {
+        oldPlayers = golfData[0].all_players;
+        log('Players found: ' + Object.keys(oldPlayers).join(', '), 'info');
+      }
+    }
+    
+    // Fetch golf_rounds
+    log('Fetching golf_rounds table...');
+    const { data: rounds, error: roundsError } = await oldDb
+      .from('golf_rounds')
+      .select('*')
+      .order('played_at', { ascending: false });
+    
+    if (roundsError) {
+      log('Error fetching golf_rounds: ' + roundsError.message, 'error');
+    } else {
+      oldRounds = rounds || [];
+      log(`Found ${oldRounds.length} total rounds`, 'success');
+    }
+    
+    // Update status
+    statusEl.innerHTML = `
+      <p class="success">✅ Data fetched successfully!</p>
+      <ul>
+        <li>Players: ${Object.keys(oldPlayers).length}</li>
+        <li>Total Rounds: ${oldRounds.length}</li>
+        <li>Courses: ${oldGolfData?.[0]?.courses?.length || 0}</li>
+      </ul>
+    `;
+    
+    // Show player selector
+    showPlayerSelector();
+    
+    // Show preview
+    showDataPreview();
+    
+    log('Data fetch complete!', 'success');
+    
+  } catch (error) {
+    log('Unexpected error: ' + error.message, 'error');
+    statusEl.innerHTML = `<p class="error">Error: ${error.message}</p>`;
+  }
+}
+
+function showPlayerSelector() {
+  const container = document.getElementById('player-selector');
+  const playerNames = Object.keys(oldPlayers);
+  
+  if (playerNames.length === 0) {
+    container.innerHTML = '<p class="warning">No players found in old data.</p>';
+    return;
+  }
+  
+  container.innerHTML = `
+    <label><strong>Select your player:</strong></label><br><br>
+    <select id="player-select" onchange="selectPlayer(this.value)">
+      <option value="">-- Choose your player --</option>
+      ${playerNames.map(name => {
+        const player = oldPlayers[name];
+        const playerId = player.id || name;
+        const roundCount = oldRounds.filter(r => String(r.player_id) === String(playerId)).length;
+        return `<option value="${playerId}">${name} (${roundCount} rounds)</option>`;
+      }).join('')}
+    </select>
+    <p style="margin-top: 1rem; color: #666;">
+      Each person needs to sign into their own account and migrate their own rounds.
+    </p>
+  `;
+}
+
+function selectPlayer(playerId) {
+  selectedPlayerId = playerId;
+  
+  if (playerId) {
+    const playerRounds = oldRounds.filter(r => String(r.player_id) === String(playerId));
+    log(`Selected player ID: ${playerId} (${playerRounds.length} rounds)`, 'info');
+    document.getElementById('migrate-btn').disabled = false;
+    showDataPreview();
+  } else {
+    document.getElementById('migrate-btn').disabled = true;
+  }
+}
+
+function showDataPreview() {
+  const previewEl = document.getElementById('data-preview');
+  let html = '';
+  
+  // Show courses from golf_data
+  if (oldGolfData && oldGolfData.length > 0 && oldGolfData[0].courses) {
+    const courses = oldGolfData[0].courses;
+    html += `<h3>Courses to Migrate (${courses.length})</h3>`;
+    html += `<table><tr><th>Name</th><th>City</th><th>Rating</th><th>Slope</th></tr>`;
+    courses.forEach(c => {
+      html += `<tr><td>${c.name || 'N/A'}</td><td>${c.city || 'N/A'}</td><td>${c.rating || 'N/A'}</td><td>${c.slope || 'N/A'}</td></tr>`;
+    });
+    html += `</table>`;
+  }
+  
+  // Show rounds for selected player
+  if (selectedPlayerId) {
+    const playerRounds = oldRounds.filter(r => String(r.player_id) === String(selectedPlayerId));
+    html += `<h3>Rounds to Migrate (${playerRounds.length})</h3>`;
+    if (playerRounds.length > 0) {
+      html += `<table><tr><th>Date</th><th>Course</th><th>Score</th><th>Differential</th></tr>`;
+      playerRounds.slice(0, 20).forEach(r => {
+        html += `<tr><td>${r.played_at || 'N/A'}</td><td>${r.course_name || 'N/A'}</td><td>${r.score || 'N/A'}</td><td>${r.differential || 'N/A'}</td></tr>`;
+      });
+      if (playerRounds.length > 20) {
+        html += `<tr><td colspan="4">... and ${playerRounds.length - 20} more rounds</td></tr>`;
+      }
+      html += `</table>`;
+    } else {
+      html += `<p class="warning">No rounds found for this player.</p>`;
+    }
+  } else if (oldRounds.length > 0) {
+    html += `<h3>All Rounds (select a player above to filter)</h3>`;
+    html += `<p>${oldRounds.length} total rounds in database</p>`;
+  }
+  
+  if (!html) {
+    html = '<p class="warning">No data found to preview.</p>';
+  }
+  
+  previewEl.innerHTML = html;
+}
+
+async function migrateData() {
+  // Check auth first
+  const isAuthed = await checkNewAuth();
+  if (!isAuthed) {
+    alert('Please sign in to the Golf Handicap app first!');
+    return;
+  }
+  
+  if (!selectedPlayerId) {
+    alert('Please select your player first!');
+    return;
+  }
+  
+  log('Starting migration...', 'info');
+  
+  const statusEl = document.getElementById('migrate-status');
+  statusEl.innerHTML = '<p>Migrating...</p>';
+  
+  let coursesCreated = 0;
+  let coursesSkipped = 0;
+  let roundsCreated = 0;
+  let errors = [];
+  
+  try {
+    // 1. Migrate courses from golf_data
+    if (oldGolfData && oldGolfData.length > 0 && oldGolfData[0].courses) {
+      log('Migrating courses...', 'info');
+      const courses = oldGolfData[0].courses;
+      
+      for (const course of courses) {
+        // Check if course already exists
+        const { data: existing } = await newDb
+          .from('courses')
+          .select('id')
+          .eq('name', course.name)
+          .limit(1);
+        
+        if (existing && existing.length > 0) {
+          log(`Course "${course.name}" already exists, skipping`, 'warning');
+          coursesSkipped++;
+          continue;
+        }
+        
+        const { error } = await newDb.from('courses').insert({
+          name: course.name,
+          city: course.city || null,
+          state: course.state || null,
+          course_rating: parseFloat(course.rating) || 72.0,
+          slope_rating: parseInt(course.slope) || 113,
+          par: parseInt(course.par) || 72,
+          created_by: newUserId
+        });
+        
+        if (error) {
+          log(`Error adding course "${course.name}": ${error.message}`, 'error');
+          errors.push(`Course: ${error.message}`);
+        } else {
+          coursesCreated++;
+          log(`Added course: ${course.name}`, 'success');
+        }
+      }
+    }
+    
+    // 2. Migrate rounds for selected player
+    const playerRounds = oldRounds.filter(r => String(r.player_id) === String(selectedPlayerId));
+    
+    if (playerRounds.length > 0) {
+      log(`Migrating ${playerRounds.length} rounds...`, 'info');
+      
+      for (const round of playerRounds) {
+        // Look up course to get rating/slope
+        let courseRating = null;
+        let slopeRating = null;
+        
+        if (oldGolfData?.[0]?.courses && round.course_name) {
+          const course = oldGolfData[0].courses.find(c => c.name === round.course_name);
+          if (course) {
+            courseRating = parseFloat(course.rating) || null;
+            slopeRating = parseInt(course.slope) || null;
+          }
+        }
+        
+        const { error } = await newDb.from('rounds').insert({
+          user_id: newUserId,
+          course_name: round.course_name,
+          score: round.score,
+          differential: round.differential,
+          date_played: round.played_at,
+          notes: round.notes,
+          course_rating: courseRating,
+          slope_rating: slopeRating
+        });
+        
+        if (error) {
+          log(`Error adding round: ${error.message}`, 'error');
+          errors.push(`Round: ${error.message}`);
+        } else {
+          roundsCreated++;
+        }
+      }
+      log(`Migrated ${roundsCreated} rounds`, 'success');
+    }
+    
+    // 3. Update handicap
+    if (roundsCreated > 0) {
+      log('Recalculating handicap...', 'info');
+      const { error: hcpError } = await newDb.rpc('calculate_handicap_index', { p_user_id: newUserId });
+      if (hcpError) {
+        log('Error calculating handicap: ' + hcpError.message, 'warning');
+      } else {
+        log('Handicap recalculated', 'success');
+      }
+    }
+    
+    // Summary
+    statusEl.innerHTML = `
+      <p class="success">✅ Migration complete!</p>
+      <ul>
+        <li>Courses created: ${coursesCreated}</li>
+        <li>Courses skipped (already exist): ${coursesSkipped}</li>
+        <li>Rounds migrated: ${roundsCreated}</li>
+        ${errors.length > 0 ? `<li class="error">Errors: ${errors.length}</li>` : ''}
+      </ul>
+      <p><a href="https://flextechla.github.io/golfhandicap/" target="_blank" class="btn btn-primary" style="display: inline-block; margin-top: 1rem; text-decoration: none;">Go to Golf Handicap App →</a></p>
+    `;
+    
+    log('Migration complete!', 'success');
+    
+  } catch (error) {
+    log('Migration failed: ' + error.message, 'error');
+    statusEl.innerHTML = `<p class="error">Migration failed: ${error.message}</p>`;
+  }
+}
+
+// Check auth on page load
+checkNewAuth();
+</script>
+
+</body>
+</html>
