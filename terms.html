@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="Terms of Service — Lazy B Studios LLC">
+    <title>Terms of Service | Lazy B Studios LLC</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9IiMxYTFhMmUiLz48dGV4dCB4PSIyNTYiIHk9IjMwMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxCPC90ZXh0Pjwvc3ZnPg==">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: #0f0f1a;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        /* ── STICKY NAV ── */
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(15,15,26,0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .nav-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-back {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.48);
+            text-decoration: none;
+            transition: color 0.18s;
+        }
+
+        .nav-back:hover { color: rgba(255,255,255,0.85); }
+
+        /* ── CONTENT ── */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px 88px;
+        }
+
+        .page-title {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 2.3rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .meta-line {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.35);
+            margin-bottom: 36px;
+        }
+
+        .meta-line strong { color: rgba(255,255,255,0.52); }
+
+        /* ── NOTICE CALLOUT ── */
+        .notice-box {
+            background: rgba(255,160,0,0.07);
+            border: 1px solid rgba(255,160,0,0.2);
+            border-left: 4px solid #ffa000;
+            border-radius: 10px;
+            padding: 20px 22px;
+            margin-bottom: 48px;
+        }
+
+        .notice-box .label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #ffa000;
+            margin-bottom: 8px;
+        }
+
+        .notice-box p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .notice-box strong { color: rgba(255,255,255,0.9); }
+
+        /* ── TYPOGRAPHY ── */
+        h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.92);
+            margin-top: 44px;
+            margin-bottom: 14px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        h3 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            margin-top: 22px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.56);
+            line-height: 1.76;
+            margin-bottom: 14px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 14px;
+        }
+
+        ul li {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.54);
+            line-height: 1.72;
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+        ul li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: rgba(255,160,0,0.55);
+        }
+
+        a { color: #64b5f6; text-decoration: none; }
+        a:hover { opacity: 0.8; }
+
+        /* ── CONTACT BLOCK ── */
+        .contact-block {
+            background: #161625;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin-top: 16px;
+        }
+
+        .contact-block p {
+            margin-bottom: 4px;
+            color: rgba(255,255,255,0.58);
+        }
+
+        .contact-block p:last-child { margin-bottom: 0; }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 40px 24px 32px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.8rem;
+            line-height: 1.75;
+        }
+
+        .footer-company {
+            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 4px;
+        }
+
+        footer a {
+            color: rgba(255,255,255,0.38);
+            text-decoration: none;
+            transition: color 0.18s;
+        }
+
+        footer a:hover { color: rgba(255,255,255,0.72); }
+
+        @media (max-width: 540px) {
+            .page-title { font-size: 1.8rem; }
+            .content    { padding: 40px 16px 64px; }
+            .site-nav   { padding: 12px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── NAV ── -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">Lazy B Studios</a>
+            <a href="index.html" class="nav-back">&larr; Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- ── TERMS CONTENT ── -->
+    <main class="content">
+
+        <h1 class="page-title">Terms of Service</h1>
+        <p class="meta-line">
+            <strong>Effective Date:</strong> May 5, 2026 &nbsp;&middot;&nbsp;
+            <strong>Last Updated:</strong> May 5, 2026
+        </p>
+
+        <div class="notice-box">
+            <div class="label">Legal Agreement</div>
+            <p>
+                By downloading, installing, or using any application or service provided by <strong>Lazy B Studios LLC</strong>, you agree to be bound by these Terms of Service. If you do not agree, do not use our Services. These Terms constitute a legally binding agreement between you and <strong>Lazy B Studios LLC</strong>, 940 O&rsquo;Neal Ln, Baton Rouge, LA 70816.
+            </p>
+        </div>
+
+        <!-- 1. Acceptance of Terms -->
+        <h2>1. Acceptance of Terms</h2>
+        <p>
+            These Terms of Service (&ldquo;Terms&rdquo;) govern your access to and use of applications, websites, and services (collectively, the &ldquo;Services&rdquo;) provided by Lazy B Studios LLC (&ldquo;Lazy B Studios,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;). By creating an account, downloading, or using any of our Services, you acknowledge that you have read, understood, and agree to these Terms and our <a href="privacy.html">Privacy Policy</a>.
+        </p>
+        <p>
+            If you are using our Services on behalf of a company or other legal entity, you represent that you have the authority to bind that entity to these Terms.
+        </p>
+
+        <!-- 2. Description of Services -->
+        <h2>2. Description of Services</h2>
+        <p>Lazy B Studios develops and operates the following software applications:</p>
+        <ul>
+            <li><strong>FullStroke</strong> &mdash; repair shop management for consumer and commercial use</li>
+            <li><strong>Golf Tracker</strong> &mdash; golf performance tracking and handicap management</li>
+            <li><strong>Bill Reminder</strong> &mdash; personal finance and bill due-date tracking</li>
+            <li><strong>Chemflo-Suite</strong> &mdash; industrial chemical process management (enterprise)</li>
+            <li><strong>Signops-Pro</strong> &mdash; signage and field operations management (enterprise)</li>
+            <li><strong>SampleFlow</strong> &mdash; brand sample tracking and logistics (in development)</li>
+        </ul>
+        <p>
+            We reserve the right to modify, suspend, or discontinue any Service or feature at any time, with or without notice. We will not be liable to you or any third party for any modification, suspension, or discontinuation.
+        </p>
+
+        <!-- 3. User Accounts -->
+        <h2>3. User Accounts</h2>
+
+        <h3>3.1 Registration</h3>
+        <p>
+            Certain features require you to create an account. You agree to provide accurate, current, and complete information during registration and to keep your account information up to date. You are responsible for safeguarding your password and for all activity that occurs under your account.
+        </p>
+
+        <h3>3.2 Account Security</h3>
+        <p>
+            You must notify us immediately at <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a> if you suspect unauthorized access to your account. We are not liable for losses caused by unauthorized use of your account resulting from your failure to protect your credentials.
+        </p>
+
+        <h3>3.3 Eligibility</h3>
+        <p>
+            You must be at least 13 years of age to use our consumer applications. Enterprise Services require users to be at least 18 years old or of legal contracting age in their jurisdiction. By using our Services, you represent that you meet the applicable eligibility requirements.
+        </p>
+
+        <!-- 4. License Grant -->
+        <h2>4. License and Intellectual Property</h2>
+
+        <h3>4.1 License to Use</h3>
+        <p>
+            Subject to your compliance with these Terms, Lazy B Studios grants you a limited, non-exclusive, non-transferable, revocable license to download and use our applications for your personal or internal business use. This license does not include the right to sublicense, sell, resell, transfer, assign, or commercially exploit our Services.
+        </p>
+
+        <h3>4.2 Ownership</h3>
+        <p>
+            All intellectual property rights in our Services, including software, source code, interfaces, designs, trademarks, logos, and documentation, are owned exclusively by Lazy B Studios LLC or our licensors. Nothing in these Terms transfers any ownership rights to you.
+        </p>
+
+        <h3>4.3 Your Content</h3>
+        <p>
+            You retain ownership of any data, records, and content you input into our Services (&ldquo;Your Content&rdquo;). By using our Services, you grant us a limited license to store, process, and transmit Your Content solely to provide the Services to you. We do not claim ownership of Your Content and will not use it for purposes beyond service delivery.
+        </p>
+
+        <!-- 5. Prohibited Uses -->
+        <h2>5. Prohibited Uses</h2>
+        <p>You agree not to:</p>
+        <ul>
+            <li>Use the Services for any unlawful purpose or in violation of any applicable regulation</li>
+            <li>Reverse engineer, decompile, or disassemble any portion of the Services</li>
+            <li>Attempt to gain unauthorized access to any system or network related to our Services</li>
+            <li>Upload or transmit viruses, malware, or any code designed to disrupt or damage systems</li>
+            <li>Use automated means (bots, scrapers, crawlers) to access the Services without our prior written consent</li>
+            <li>Impersonate any person or entity or misrepresent your affiliation with any person or entity</li>
+            <li>Interfere with or disrupt the integrity or performance of the Services</li>
+            <li>Collect or harvest personal data about other users without their consent</li>
+        </ul>
+        <p>
+            Violation of these restrictions may result in immediate termination of your account and may expose you to civil or criminal liability.
+        </p>
+
+        <!-- 6. Subscriptions and Payments -->
+        <h2>6. Subscriptions and Payments</h2>
+
+        <h3>6.1 Paid Features</h3>
+        <p>
+            Certain Services or features may require a paid subscription. All fees are stated in USD and are non-refundable except as required by applicable law or as expressly stated in a separate written agreement.
+        </p>
+
+        <h3>6.2 Billing</h3>
+        <p>
+            Subscription fees are billed in advance on a recurring basis. If your payment method fails, we may suspend or terminate your access to paid features after reasonable notice. You are responsible for keeping your payment information current.
+        </p>
+
+        <h3>6.3 In-App Purchases</h3>
+        <p>
+            In-app purchases are processed by the Apple App Store or Google Play and are subject to those platforms&rsquo; respective terms and refund policies. Lazy B Studios has no control over those platforms&rsquo; billing or refund processes.
+        </p>
+
+        <h3>6.4 Enterprise Agreements</h3>
+        <p>
+            Enterprise customers may be subject to separate order forms or service agreements that supersede or supplement these Terms with respect to pricing, support, and data handling.
+        </p>
+
+        <!-- 7. Privacy -->
+        <h2>7. Privacy</h2>
+        <p>
+            Your use of our Services is also governed by our <a href="privacy.html">Privacy Policy</a>, which is incorporated into these Terms by reference. By using our Services, you consent to the collection and use of your information as described in the Privacy Policy.
+        </p>
+
+        <!-- 8. Disclaimer of Warranties -->
+        <h2>8. Disclaimer of Warranties</h2>
+        <p>
+            THE SERVICES ARE PROVIDED &ldquo;AS IS&rdquo; AND &ldquo;AS AVAILABLE&rdquo; WITHOUT WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. LAZY B STUDIOS LLC DOES NOT WARRANT THAT THE SERVICES WILL BE UNINTERRUPTED, ERROR-FREE, SECURE, OR FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
+        </p>
+        <p>
+            Some jurisdictions do not allow the exclusion of implied warranties, so some of the above exclusions may not apply to you.
+        </p>
+
+        <!-- 9. Limitation of Liability -->
+        <h2>9. Limitation of Liability</h2>
+        <p>
+            TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, LAZY B STUDIOS LLC, ITS OFFICERS, DIRECTORS, EMPLOYEES, AND AGENTS SHALL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR PUNITIVE DAMAGES, INCLUDING BUT NOT LIMITED TO LOSS OF PROFITS, DATA, GOODWILL, OR OTHER INTANGIBLE LOSSES, ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF, OR INABILITY TO USE, THE SERVICES.
+        </p>
+        <p>
+            IN NO EVENT SHALL LAZY B STUDIOS LLC&rsquo;S TOTAL LIABILITY TO YOU FOR ALL CLAIMS ARISING FROM OR RELATED TO THESE TERMS OR THE SERVICES EXCEED THE GREATER OF (A) THE AMOUNT YOU PAID US IN THE TWELVE (12) MONTHS PRECEDING THE CLAIM, OR (B) ONE HUNDRED DOLLARS ($100).
+        </p>
+
+        <!-- 10. Indemnification -->
+        <h2>10. Indemnification</h2>
+        <p>
+            You agree to defend, indemnify, and hold harmless Lazy B Studios LLC and its officers, directors, employees, and agents from and against any claims, damages, obligations, losses, liabilities, costs, and expenses (including reasonable attorneys&rsquo; fees) arising from: (a) your use of the Services; (b) Your Content; (c) your violation of these Terms; or (d) your violation of any third-party right.
+        </p>
+
+        <!-- 11. Termination -->
+        <h2>11. Termination</h2>
+        <p>
+            We may suspend or terminate your access to the Services at any time, with or without cause, with or without notice. You may terminate your account at any time by contacting us at <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a>. Upon termination, your right to use the Services ceases immediately. Sections 4.2, 8, 9, 10, 12, and 13 survive termination.
+        </p>
+
+        <!-- 12. Governing Law -->
+        <h2>12. Governing Law</h2>
+        <p>
+            These Terms are governed by and construed in accordance with the laws of the State of Louisiana, United States, without regard to its conflict-of-law provisions. You consent to the exclusive jurisdiction of the state and federal courts located in East Baton Rouge Parish, Louisiana for any disputes arising under these Terms.
+        </p>
+
+        <!-- 13. Dispute Resolution -->
+        <h2>13. Dispute Resolution</h2>
+        <p>
+            Before initiating any formal legal proceeding, you agree to contact us at <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a> and attempt to resolve the dispute informally. We will make good-faith efforts to resolve any dispute within 30 days of receiving written notice.
+        </p>
+        <p>
+            If informal resolution fails, any claim or dispute arising out of or relating to these Terms or the Services shall be resolved by binding arbitration under the rules of the American Arbitration Association, conducted in Baton Rouge, Louisiana. You waive any right to participate in a class action lawsuit or class-wide arbitration.
+        </p>
+
+        <!-- 14. Changes to Terms -->
+        <h2>14. Changes to These Terms</h2>
+        <p>
+            We may revise these Terms at any time. When we make material changes, we will update the &ldquo;Last Updated&rdquo; date above and, where required, provide notice via in-app notification or email. Your continued use of the Services after revised Terms take effect constitutes your acceptance of the changes.
+        </p>
+
+        <!-- 15. Miscellaneous -->
+        <h2>15. Miscellaneous</h2>
+        <p>
+            These Terms, together with our Privacy Policy and any applicable enterprise agreement, constitute the entire agreement between you and Lazy B Studios LLC with respect to the Services. If any provision of these Terms is found to be unenforceable, the remaining provisions will continue in full force and effect. Our failure to enforce any right or provision does not constitute a waiver of that right or provision.
+        </p>
+
+        <!-- 16. Contact Us -->
+        <h2>16. Contact Us</h2>
+        <p>Questions about these Terms should be directed to:</p>
+        <div class="contact-block">
+            <p><strong style="color:rgba(255,255,255,0.8);">Lazy B Studios LLC</strong></p>
+            <p>940 O&rsquo;Neal Ln, Baton Rouge, LA 70816</p>
+            <p>Email: <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a></p>
+            <p style="color:rgba(255,255,255,0.38);">Response time: within 5 business days</p>
+        </div>
+
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="footer-company">Lazy B Studios LLC</div>
+        <div style="color:rgba(255,255,255,0.28); margin-bottom:14px;">
+            940 O'Neal Ln, Baton Rouge, LA 70816
+        </div>
+        <div style="margin-bottom:14px;">
+            <a href="index.html">Home</a> &nbsp;&middot;&nbsp;
+            <a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp;
+            <a href="terms.html">Terms of Service</a> &nbsp;&middot;&nbsp;
+            <a href="mailto:support@lazybstudios.com">Contact</a>
+        </div>
+        <p>&copy; 2026 Lazy B Studios LLC. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>

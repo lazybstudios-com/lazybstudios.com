@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="Lazy B Studios LLC — Focused software solutions for consumer utility and industrial precision.">
+    <title>Lazy B Studios LLC</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9IiMxYTFhMmUiLz48dGV4dCB4PSIyNTYiIHk9IjMwMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxCPC90ZXh0Pjwvc3ZnPg==">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: #0f0f1a;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        /* ── NAV ── */
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(15,15,26,0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .nav-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-contact {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.48);
+            text-decoration: none;
+            transition: color 0.18s;
+        }
+
+        .nav-contact:hover { color: rgba(255,255,255,0.85); }
+
+        /* ── HERO ── */
+        .hero {
+            text-align: center;
+            padding: 40px 20px 36px;
+            background:
+                radial-gradient(circle at 88% 15%, rgba(255,160,0,0.14) 0%, transparent 46%),
+                radial-gradient(circle at 12% 88%, rgba(100,181,246,0.08) 0%, transparent 46%),
+                linear-gradient(160deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,255,255,0.04) 1px, transparent 1px);
+            background-size: 28px 28px;
+            pointer-events: none;
+        }
+
+        .hero-content { position: relative; z-index: 1; }
+
+        .logo-text {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 2.6rem;
+            font-weight: 400;
+            letter-spacing: -1px;
+        }
+
+        .logo-text::after {
+            content: '';
+            display: block;
+            width: 36px;
+            height: 3px;
+            background: #ffa000;
+            margin: 8px auto 16px;
+            border-radius: 2px;
+        }
+
+        .hero-headline {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.85);
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 0.93rem;
+            color: rgba(255,255,255,0.5);
+            max-width: 420px;
+            margin: 0 auto;
+            line-height: 1.65;
+        }
+
+        /* ── PORTFOLIO ── */
+        .apps-section {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 20px 60px;
+        }
+
+        .section-group { margin-bottom: 48px; }
+        .section-group:last-child { margin-bottom: 0; }
+
+        .section-title {
+            font-size: 0.68rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.19em;
+            color: rgba(255,255,255,0.78);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 14px;
+        }
+
+        .section-title::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.08);
+        }
+
+        /* ── APP CARD ── */
+        .app-card {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            background: #161625;
+            border: 1px solid rgba(255,255,255,0.07);
+            border-left-width: 3px;
+            border-radius: 14px;
+            padding: 20px 20px 18px;
+            margin-bottom: 12px;
+            transition: border-color 0.2s, transform 0.2s, box-shadow 0.2s;
+        }
+
+        .app-card.consumer-card   { border-left-color: rgba(255,160,0,0.3); }
+        .app-card.enterprise-card { border-left-color: rgba(100,181,246,0.3); }
+        .app-card.lab-card        { border-left-color: rgba(220,60,60,0.28); }
+
+        .app-card:not(.coming-soon):hover {
+            border-color: rgba(255,255,255,0.14);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 28px rgba(0,0,0,0.4);
+        }
+
+        .app-card.consumer-card:not(.coming-soon):hover   { border-left-color: rgba(255,160,0,0.6); }
+        .app-card.enterprise-card:not(.coming-soon):hover { border-left-color: rgba(100,181,246,0.6); }
+        .app-card.lab-card:not(.coming-soon):hover        { border-left-color: rgba(220,60,60,0.55); }
+
+        .app-card.coming-soon { opacity: 0.62; }
+        .app-card.coming-soon:hover { transform: none; box-shadow: none; }
+
+        .app-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 13px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.4rem;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+
+        .app-icon-text {
+            font-weight: 700;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+        }
+
+        .app-info { flex: 1; min-width: 0; }
+
+        .app-name-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 7px;
+        }
+
+        .app-name { font-weight: 700; font-size: 1rem; }
+
+        .badge {
+            display: inline-block;
+            font-size: 0.57rem;
+            font-weight: 700;
+            padding: 2px 8px;
+            border-radius: 5px;
+            letter-spacing: 0.06em;
+        }
+
+        .badge-soon { background: rgba(255,160,0,0.14); color: #ffa000; }
+        .badge-dev  { background: rgba(16,185,129,0.13); color: #34d399; border: 1px solid rgba(52,211,153,0.2); }
+        .badge-ent  { background: rgba(15,52,96,0.7); color: #64b5f6; border: 1px solid rgba(100,181,246,0.22); }
+
+        .app-desc {
+            font-size: 0.84rem;
+            color: rgba(255,255,255,0.47);
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+
+        /* ── CARD BUTTONS ── */
+        .learn-more-btn {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: rgba(255,160,0,0.85);
+            text-decoration: none;
+            border: 1px solid rgba(255,160,0,0.28);
+            border-radius: 7px;
+            padding: 5px 14px;
+            transition: background 0.18s, border-color 0.18s, color 0.18s;
+        }
+
+        .learn-more-btn:hover {
+            background: rgba(255,160,0,0.1);
+            border-color: rgba(255,160,0,0.6);
+            color: #ffa000;
+        }
+
+        .demo-btn {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #64b5f6;
+            text-decoration: none;
+            border: 1px solid rgba(100,181,246,0.28);
+            border-radius: 7px;
+            padding: 5px 14px;
+            transition: background 0.18s, border-color 0.18s;
+        }
+
+        .demo-btn:hover {
+            background: rgba(100,181,246,0.08);
+            border-color: rgba(100,181,246,0.55);
+        }
+
+        /* ── SHARED FORM STYLES ── */
+        .form-input {
+            width: 100%;
+            background: rgba(255,255,255,0.06);
+            border: 1px solid rgba(255,255,255,0.13);
+            border-radius: 10px;
+            padding: 12px 16px;
+            font-size: 0.9rem;
+            color: #fff;
+            font-family: 'DM Sans', sans-serif;
+            outline: none;
+            transition: border-color 0.2s, background 0.2s;
+        }
+
+        .form-input::placeholder { color: rgba(255,255,255,0.28); }
+
+        .form-input:focus {
+            background: rgba(255,255,255,0.08);
+        }
+
+        .form-row {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .form-row .form-input { flex: 1; min-width: 140px; }
+
+        textarea.form-input {
+            resize: vertical;
+            min-height: 84px;
+            line-height: 1.55;
+        }
+
+        /* ── ENTERPRISE DEMO SECTION ── */
+        .demo-section {
+            position: relative;
+            overflow: hidden;
+            padding: 72px 20px 80px;
+            text-align: center;
+            background:
+                radial-gradient(circle at 50% 0%, rgba(100,181,246,0.09) 0%, transparent 55%),
+                linear-gradient(180deg, #0d0d1c 0%, #0a1020 100%);
+            border-top: 1px solid rgba(100,181,246,0.12);
+            border-bottom: 1px solid rgba(100,181,246,0.06);
+        }
+
+        .demo-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(100,181,246,0.05) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+        }
+
+        .section-inner { position: relative; z-index: 1; }
+
+        .section-eyebrow {
+            font-size: 0.66rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            margin-bottom: 12px;
+        }
+
+        .section-eyebrow.gold  { color: #ffa000; }
+        .section-eyebrow.blue  { color: #64b5f6; }
+
+        .section-heading {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 12px;
+        }
+
+        .section-subtext {
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.5);
+            max-width: 420px;
+            margin: 0 auto 28px;
+            line-height: 1.65;
+        }
+
+        .demo-form {
+            max-width: 440px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .demo-submit-btn {
+            background: #1565c0;
+            color: #fff;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 28px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: background 0.18s, transform 0.15s, box-shadow 0.18s;
+            align-self: center;
+            min-width: 160px;
+        }
+
+        .demo-submit-btn:hover {
+            background: #1976d2;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(21,101,192,0.4);
+        }
+
+        .demo-submit-btn:active { transform: translateY(0); box-shadow: none; }
+
+        /* ── BETA LAB ── */
+        .beta-section {
+            position: relative;
+            overflow: hidden;
+            padding: 72px 20px 80px;
+            text-align: center;
+            background:
+                radial-gradient(circle at 50% 0%, rgba(255,160,0,0.11) 0%, transparent 55%),
+                linear-gradient(180deg, #111122 0%, #0d0d1c 100%);
+            border-top: 1px solid rgba(255,160,0,0.13);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .beta-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(255,160,0,0.06) 1px, transparent 1px);
+            background-size: 24px 24px;
+            pointer-events: none;
+        }
+
+        .beta-form {
+            max-width: 440px;
+            margin: 0 auto;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .beta-form .form-input {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .beta-form .form-input:focus { border-color: rgba(255,160,0,0.55); }
+
+        .beta-submit-btn {
+            background: #ffa000;
+            color: #0f0f1a;
+            border: none;
+            border-radius: 10px;
+            padding: 12px 28px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: background 0.18s, transform 0.15s, box-shadow 0.18s;
+            white-space: nowrap;
+        }
+
+        .beta-submit-btn:hover {
+            background: #ffb300;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(255,160,0,0.38);
+        }
+
+        .beta-submit-btn:active { transform: translateY(0); box-shadow: none; }
+
+        .form-hint {
+            margin-top: 14px;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.25);
+        }
+
+        .form-hint a {
+            color: rgba(255,255,255,0.4);
+            text-decoration: none;
+            transition: color 0.18s;
+        }
+
+        .form-hint a:hover { color: rgba(255,255,255,0.7); }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 40px 20px 32px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.8rem;
+            line-height: 1.75;
+        }
+
+        .footer-company {
+            font-weight: 600;
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.52);
+            margin-bottom: 4px;
+        }
+
+        .footer-address { color: rgba(255,255,255,0.3); margin-bottom: 16px; }
+        .footer-links   { margin-bottom: 12px; }
+
+        footer a {
+            color: rgba(255,255,255,0.38);
+            text-decoration: none;
+            transition: color 0.18s;
+        }
+
+        footer a:hover { color: rgba(255,255,255,0.72); }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 540px) {
+            .logo-text       { font-size: 2rem; }
+            .hero-headline   { font-size: 1.1rem; }
+            .section-heading { font-size: 1.75rem; }
+            .app-icon        { width: 44px; height: 44px; }
+            .app-card        { padding: 16px 14px; }
+            .nav-inner       { padding: 10px 16px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── NAV ── -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">Lazy B Studios</a>
+            <a href="mailto:support@lazybstudios.com" class="nav-contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="logo-text">Lazy B Studios</div>
+            <div class="hero-headline">Simple Tools, Built with Care.</div>
+            <p class="tagline">Developing focused software solutions for consumer utility and industrial precision.</p>
+        </div>
+    </section>
+
+    <!-- ── PORTFOLIO ── -->
+    <section class="apps-section">
+
+        <!-- Consumer Apps -->
+        <div class="section-group">
+            <div class="section-title">Consumer Apps</div>
+
+            <div class="app-card consumer-card">
+                <div class="app-icon" style="background:#f59e0b;">
+                    <span class="app-icon-text" style="color:#000;">FS</span>
+                </div>
+                <div class="app-info">
+                    <div class="app-name-row">
+                        <span class="app-name">FullStroke</span>
+                        <span class="badge badge-dev">IN DEVELOPMENT</span>
+                    </div>
+                    <p class="app-desc">FullStroke streamlines every aspect of a small engine repair shop, from creating work orders and managing customer records to tracking parts and generating professional invoices. Built for independent mechanics, it puts everything you need in a single, intuitive app.</p>
+                    <a href="#beta" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="app-card consumer-card">
+                <div class="app-icon" style="background:#2e7d32; font-size:1.5rem;">&#9971;</div>
+                <div class="app-info">
+                    <div class="app-name-row">
+                        <span class="app-name">Golf Tracker</span>
+                        <span class="badge badge-dev">IN DEVELOPMENT</span>
+                    </div>
+                    <p class="app-desc">Golf Tracker calculates and maintains your official World Handicap System index, making it easy to post rounds and watch your game improve over time. Compete with friends through built-in social scoring, leaderboards, and group rounds.</p>
+                    <a href="#beta" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+
+            <div class="app-card consumer-card">
+                <div class="app-icon" style="background:#1e3a5f; font-size:1.5rem;">&#128181;</div>
+                <div class="app-info">
+                    <div class="app-name-row">
+                        <span class="app-name">Bill Reminder</span>
+                        <span class="badge badge-dev">IN DEVELOPMENT</span>
+                    </div>
+                    <p class="app-desc">Bill Reminder keeps every recurring payment organized in a clean dashboard, with smart due-date alerts so you never miss a bill again. Set it up once and stay on top of your finances without any ongoing effort.</p>
+                    <a href="#beta" class="learn-more-btn">Learn More</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Enterprise Solutions -->
+        <div class="section-group">
+            <div class="section-title">Enterprise Solutions</div>
+
+            <div class="app-card enterprise-card">
+                <div class="app-icon" style="background:#0d47a1;">
+                    <span class="app-icon-text" style="color:#90caf9;">CF</span>
+                </div>
+                <div class="app-info">
+                    <div class="app-name-row">
+                        <span class="app-name">Chemflo-Suite</span>
+                        <span class="badge badge-ent">ENTERPRISE EDITION</span>
+                    </div>
+                    <p class="app-desc">Chemflo-Suite is an enterprise-grade platform for monitoring chemical flow processes and managing inventory across industrial operations. It delivers real-time analytics, compliance tracking, and centralized controls designed for regulated environments.</p>
+                    <a href="#demo" class="demo-btn">Request a Demo</a>
+                </div>
+            </div>
+
+            <div class="app-card enterprise-card">
+                <div class="app-icon" style="background:#4a148c;">
+                    <span class="app-icon-text" style="color:#ce93d8;">SP</span>
+                </div>
+                <div class="app-info">
+                    <div class="app-name-row">
+                        <span class="app-name">Signops-Pro</span>
+                        <span class="badge badge-ent">ENTERPRISE EDITION</span>
+                    </div>
+                    <p class="app-desc">Signops-Pro is a comprehensive workflow management platform built specifically for signage fabrication companies, from design approval through field installation. Coordinate job scheduling, track crews, manage client approvals, and keep every project on time and on budget.</p>
+                    <a href="#demo" class="demo-btn">Request a Demo</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Lab -->
+        <div class="section-group">
+            <div class="section-title">The Lab</div>
+
+            <div class="app-card lab-card coming-soon">
+                <div class="app-icon" style="background:#7b1c1c;">
+                    <span class="app-icon-text" style="color:#ef9a9a;">SF</span>
+                </div>
+                <div class="app-info">
+                    <div class="app-name-row">
+                        <span class="app-name">SampleFlow</span>
+                        <span class="badge badge-soon">COMING SOON</span>
+                    </div>
+                    <p class="app-desc">SampleFlow is a smart logistics platform designed to help brand teams manage every product sample from request through return. Every step of the sample lifecycle is tracked automatically &mdash; no more lost samples, missed deadlines, or manual spreadsheets.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ── ENTERPRISE DEMO FORM ── -->
+    <section class="demo-section" id="demo">
+        <div class="section-inner">
+            <div class="section-eyebrow blue">Enterprise</div>
+            <h2 class="section-heading">Request a Demo</h2>
+            <p class="section-subtext">Tell us about your project and we&rsquo;ll get back to you within one business day.</p>
+            <form class="demo-form" id="demoForm">
+                <input type="hidden" name="type" value="demo">
+                <div class="form-row">
+                    <input type="text"  name="name"    class="form-input" placeholder="Your name" required>
+                    <input type="email" name="email"   class="form-input" placeholder="Work email" required>
+                </div>
+                <textarea name="message" class="form-input" placeholder="Tell us about your project (optional)" rows="3"></textarea>
+                <button type="submit" class="demo-submit-btn" id="demoBtn">Send Request</button>
+            </form>
+            <p class="form-hint">Or email us directly at <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a></p>
+        </div>
+    </section>
+
+    <!-- ── BETA LAB ── -->
+    <section class="beta-section" id="beta">
+        <div class="section-inner">
+            <div class="section-eyebrow gold">Beta Lab</div>
+            <h2 class="section-heading">Join the Beta Lab</h2>
+            <p class="section-subtext">Get early access to our latest tools and help shape our development roadmap.</p>
+            <form class="beta-form" id="betaForm">
+                <input type="hidden" name="type" value="beta">
+                <input type="email" name="email" class="form-input" id="betaEmail" placeholder="your@email.com" autocomplete="email" required>
+                <button type="submit" class="beta-submit-btn" id="betaBtn">Join Now</button>
+            </form>
+            <p class="form-hint">Or email us directly at <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a></p>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="footer-company">Lazy B Studios LLC</div>
+        <div class="footer-address">
+            940 O'Neal Ln, Baton Rouge, LA 70816<br>
+            <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a>
+        </div>
+        <div class="footer-links">
+            <a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp;
+            <a href="terms.html">Terms of Service</a> &nbsp;&middot;&nbsp;
+            <a href="mailto:support@lazybstudios.com">Contact</a>
+        </div>
+        <p>&copy; 2026 Lazy B Studios LLC. All rights reserved.</p>
+    </footer>
+
+    <script>
+        async function submitForm(form, btn, successText) {
+            var original = btn.textContent;
+            btn.textContent = 'Sending…';
+            btn.disabled = true;
+
+            try {
+                var res = await fetch('/api/contact', {
+                    method: 'POST',
+                    body: JSON.stringify(Object.fromEntries(new FormData(form))),
+                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
+                });
+
+                if (res.ok) {
+                    btn.textContent = successText;
+                    btn.style.background = '#2e7d32';
+                    btn.style.color = '#a5d6a7';
+                    form.reset();
+                } else {
+                    btn.textContent = 'Try Again';
+                    btn.disabled = false;
+                }
+            } catch (_) {
+                btn.textContent = 'Try Again';
+                btn.disabled = false;
+            }
+        }
+
+        document.getElementById('demoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitForm(this, document.getElementById('demoBtn'), 'Request Sent!');
+        });
+
+        document.getElementById('betaForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            submitForm(this, document.getElementById('betaBtn'), "You’re In!");
+        });
+    </script>
+
+</body>
+</html>

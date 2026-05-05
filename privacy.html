@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="Privacy Policy — Lazy B Studios LLC">
+    <title>Privacy Policy | Lazy B Studios LLC</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9IiMxYTFhMmUiLz48dGV4dCB4PSIyNTYiIHk9IjMwMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxCPC90ZXh0Pjwvc3ZnPg==">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'DM Sans', system-ui, sans-serif;
+            background: #0f0f1a;
+            color: #fff;
+            min-height: 100vh;
+        }
+
+        /* ── STICKY NAV (matches index.html) ── */
+        .site-nav {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            background: rgba(15,15,26,0.92);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+
+        .nav-inner {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-brand {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #fff;
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-back {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.48);
+            text-decoration: none;
+            transition: color 0.18s;
+        }
+
+        .nav-back:hover { color: rgba(255,255,255,0.85); }
+
+        /* ── CONTENT ── */
+        .content {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 24px 88px;
+        }
+
+        .page-title {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 2.3rem;
+            font-weight: 400;
+            letter-spacing: -0.5px;
+            margin-bottom: 8px;
+        }
+
+        .meta-line {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.35);
+            margin-bottom: 36px;
+        }
+
+        .meta-line strong { color: rgba(255,255,255,0.52); }
+
+        /* ── DATA CONTROLLER CALLOUT ── */
+        .controller-box {
+            background: rgba(255,160,0,0.07);
+            border: 1px solid rgba(255,160,0,0.2);
+            border-left: 4px solid #ffa000;
+            border-radius: 10px;
+            padding: 20px 22px;
+            margin-bottom: 48px;
+        }
+
+        .controller-box .label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #ffa000;
+            margin-bottom: 8px;
+        }
+
+        .controller-box p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            line-height: 1.65;
+            margin: 0;
+        }
+
+        .controller-box strong { color: rgba(255,255,255,0.9); }
+
+        /* ── DELETION REQUEST CALLOUT (Google Play 2026) ── */
+        .deletion-box {
+            background: rgba(100,181,246,0.06);
+            border: 1px solid rgba(100,181,246,0.2);
+            border-left: 4px solid #64b5f6;
+            border-radius: 10px;
+            padding: 22px 24px;
+            margin: 24px 0 8px;
+        }
+
+        .deletion-box .label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.18em;
+            color: #64b5f6;
+            margin-bottom: 10px;
+        }
+
+        .deletion-box p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.65);
+            line-height: 1.68;
+            margin-bottom: 10px;
+        }
+
+        .deletion-box p:last-child { margin-bottom: 0; }
+
+        .deletion-box strong { color: rgba(255,255,255,0.88); }
+
+        .deletion-box a { color: #64b5f6; text-decoration: none; }
+        .deletion-box a:hover { opacity: 0.8; }
+
+        /* ── TYPOGRAPHY ── */
+        h2 {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: rgba(255,255,255,0.92);
+            margin-top: 44px;
+            margin-bottom: 14px;
+            padding-bottom: 9px;
+            border-bottom: 1px solid rgba(255,255,255,0.07);
+        }
+
+        h3 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: rgba(255,255,255,0.7);
+            text-transform: uppercase;
+            letter-spacing: 0.07em;
+            margin-top: 22px;
+            margin-bottom: 8px;
+        }
+
+        p {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.56);
+            line-height: 1.76;
+            margin-bottom: 14px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 14px;
+        }
+
+        ul li {
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.54);
+            line-height: 1.72;
+            padding-left: 18px;
+            position: relative;
+            margin-bottom: 5px;
+        }
+
+        ul li::before {
+            content: '–';
+            position: absolute;
+            left: 0;
+            color: rgba(255,160,0,0.55);
+        }
+
+        a { color: #64b5f6; text-decoration: none; }
+        a:hover { opacity: 0.8; }
+
+        /* ── CONTACT BLOCK ── */
+        .contact-block {
+            background: #161625;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 12px;
+            padding: 22px 24px;
+            margin-top: 16px;
+        }
+
+        .contact-block p {
+            margin-bottom: 4px;
+            color: rgba(255,255,255,0.58);
+        }
+
+        .contact-block p:last-child { margin-bottom: 0; }
+
+        /* ── FOOTER ── */
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.06);
+            padding: 40px 24px 32px;
+            text-align: center;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.8rem;
+            line-height: 1.75;
+        }
+
+        .footer-company {
+            font-weight: 600;
+            color: rgba(255,255,255,0.5);
+            margin-bottom: 4px;
+        }
+
+        footer a {
+            color: rgba(255,255,255,0.38);
+            text-decoration: none;
+            transition: color 0.18s;
+        }
+
+        footer a:hover { color: rgba(255,255,255,0.72); }
+
+        @media (max-width: 540px) {
+            .page-title { font-size: 1.8rem; }
+            .content    { padding: 40px 16px 64px; }
+            .site-nav   { padding: 12px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ── NAV ── -->
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">Lazy B Studios</a>
+            <a href="index.html" class="nav-back">&larr; Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- ── POLICY CONTENT ── -->
+    <main class="content">
+
+        <h1 class="page-title">Privacy Policy</h1>
+        <p class="meta-line">
+            <strong>Effective Date:</strong> May 5, 2026 &nbsp;&middot;&nbsp;
+            <strong>Last Updated:</strong> May 5, 2026
+        </p>
+
+        <!-- Data Controller Callout -->
+        <div class="controller-box">
+            <div class="label">Data Controller</div>
+            <p>
+                <strong>Lazy B Studios LLC</strong>, located at 940 O&rsquo;Neal Ln, Baton Rouge, LA 70816, United States, is the data controller responsible for the collection, use, and protection of your personal information under this Privacy Policy and applicable privacy law. Questions or requests may be directed to <strong>support@lazybstudios.com</strong>.
+            </p>
+        </div>
+
+        <!-- 1. Introduction -->
+        <h2>1. Introduction</h2>
+        <p>
+            Lazy B Studios LLC (&ldquo;Lazy B Studios,&rdquo; &ldquo;we,&rdquo; &ldquo;us,&rdquo; or &ldquo;our&rdquo;) develops and operates mobile and enterprise software applications, including <strong>FullStroke</strong>, <strong>Golf Tracker</strong>, <strong>Bill Reminder</strong>, <strong>Chemflo-Suite</strong>, <strong>Signops-Pro</strong>, and <strong>SampleFlow</strong> (collectively, the &ldquo;Services&rdquo;).
+        </p>
+        <p>
+            This Privacy Policy describes how we collect, use, disclose, and protect information about you when you use any of our Services. By downloading, installing, or using a Lazy B Studios application, you acknowledge that you have read and understood this policy. If you do not agree, please discontinue use of our Services.
+        </p>
+
+        <!-- 2. Information We Collect -->
+        <h2>2. Information We Collect</h2>
+
+        <h3>2.1 Information You Provide</h3>
+        <ul>
+            <li>Account registration details (name, email address, password)</li>
+            <li>Optional profile information</li>
+            <li>App-specific data you enter: repair records, golf scores, bill due dates, work orders, inventory records, or sample tracking data</li>
+            <li>Support communications and feedback</li>
+            <li>Business information provided when setting up an enterprise account</li>
+        </ul>
+
+        <h3>2.2 Information Collected Automatically</h3>
+        <ul>
+            <li>Device information: model, operating system version, and unique device identifiers</li>
+            <li>Usage data: features accessed, session duration, in-app navigation patterns, and crash reports</li>
+            <li>IP address (used to derive approximate region for security and analytics)</li>
+            <li>App performance metrics used to identify and resolve technical issues</li>
+        </ul>
+
+        <h3>2.3 What We Do Not Collect</h3>
+        <ul>
+            <li>Precise GPS location without explicit in-app opt-in consent</li>
+            <li>Camera, microphone, or photo library access without explicit permission</li>
+            <li>Personal data from children under 13 years of age</li>
+            <li>Raw payment card numbers &mdash; all payments are processed by third-party PCI-compliant providers</li>
+        </ul>
+
+        <!-- 3. How We Use Your Information -->
+        <h2>3. How We Use Your Information</h2>
+        <ul>
+            <li>To provide, operate, and improve our Services</li>
+            <li>To personalize your in-app experience</li>
+            <li>To send service-related communications, security alerts, and account notices</li>
+            <li>To respond to customer support requests and resolve disputes</li>
+            <li>To analyze usage patterns and diagnose technical issues</li>
+            <li>To detect, prevent, and address fraudulent or unauthorized activity</li>
+            <li>To comply with applicable laws, regulations, and legal processes</li>
+        </ul>
+        <p>We do not use your data for targeted advertising and we do not build advertising profiles based on your activity.</p>
+
+        <!-- 4. Data Sharing -->
+        <h2>4. Data Sharing</h2>
+        <p><strong>We do not sell, rent, or trade your personal information to third parties.</strong> We may share information only in the limited circumstances below.</p>
+
+        <h3>4.1 Service Providers</h3>
+        <p>We engage trusted third-party vendors who have access to your data only as needed to perform their functions and are contractually obligated to maintain confidentiality. Current providers include:</p>
+        <ul>
+            <li><strong>Vercel</strong> &mdash; website and web application hosting (<a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">vercel.com/legal/privacy-policy</a>)</li>
+            <li><strong>Google Play / Google Firebase</strong> &mdash; Android app distribution and optional analytics (<a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a>)</li>
+            <li><strong>Apple App Store</strong> &mdash; iOS app distribution (<a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">apple.com/legal/privacy</a>)</li>
+        </ul>
+
+        <h3>4.2 Legal Requirements</h3>
+        <p>We may disclose information if required by law, court order, or government regulation, or if we reasonably believe disclosure is necessary to protect the rights, property, or safety of Lazy B Studios LLC, our users, or the public.</p>
+
+        <h3>4.3 Business Transfers</h3>
+        <p>In the event of a merger, acquisition, or sale of assets, your information may be transferred as part of that transaction. We will notify you before your data becomes subject to a different privacy policy.</p>
+
+        <!-- 5. Data Collection Per App -->
+        <h2>5. App-Specific Data Practices</h2>
+        <p>The following summarizes the type of user-provided data each application handles:</p>
+        <ul>
+            <li><strong>FullStroke</strong> &mdash; customer names, vehicle/equipment records, work order details, parts inventory, invoices</li>
+            <li><strong>Golf Tracker</strong> &mdash; golf scores, handicap index, optional player profile, and social group data</li>
+            <li><strong>Bill Reminder</strong> &mdash; bill names, due dates, amounts, and payment schedules (stored locally or in your account)</li>
+            <li><strong>Chemflo-Suite</strong> &mdash; industrial process data, chemical inventory records, compliance logs (enterprise accounts only)</li>
+            <li><strong>Signops-Pro</strong> &mdash; job records, crew assignments, client project data (enterprise accounts only)</li>
+            <li><strong>SampleFlow</strong> &mdash; brand sample records, tracking statuses, due dates (in development)</li>
+        </ul>
+        <p>None of the above categories of data are shared with third-party advertisers or data brokers.</p>
+
+        <!-- 6. Data Retention -->
+        <h2>6. Data Retention</h2>
+        <p>
+            We retain personal information for as long as your account is active or as needed to provide Services. When you close your account or submit a valid deletion request (see Section 7), we will remove your data from active systems within 30 calendar days, except where retention is required by applicable law or for legitimate business purposes such as fraud prevention, legal disputes, or financial record-keeping (typically up to 7 years for financial records where required by law).
+        </p>
+
+        <!-- 7. Data Deletion Requests (Google Play 2026 / Apple required) -->
+        <h2>7. Data Deletion Requests</h2>
+        <p>
+            In compliance with Google Play&rsquo;s 2026 Developer Policy and Apple App Store guidelines, Lazy B Studios LLC provides a clear, accessible process for users to request the deletion of their personal data at any time, regardless of whether they still have an active account.
+        </p>
+
+        <div class="deletion-box">
+            <div class="label">How to Request Deletion</div>
+            <p>
+                Send an email to <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a> with the subject line <strong>&ldquo;Data Deletion Request.&rdquo;</strong>
+            </p>
+            <p>Your message must include:</p>
+            <p>
+                &bull; Your full name<br>
+                &bull; The email address associated with your account<br>
+                &bull; The name(s) of the Lazy B Studios application(s) you use<br>
+                &bull; Whether you want account data deleted, all data deleted, or only specific data deleted
+            </p>
+            <p>
+                <strong>Timeline:</strong> We will confirm receipt within <strong>5 business days</strong> and complete the deletion within <strong>30 calendar days</strong> of your confirmed request.
+            </p>
+            <p>
+                <strong>Note:</strong> Certain data may be retained after deletion if required by law (e.g., financial records, fraud logs). We will inform you of any such retention in our confirmation response.
+            </p>
+        </div>
+
+        <!-- 8. Your Privacy Rights -->
+        <h2>8. Your Privacy Rights</h2>
+        <p>Depending on your jurisdiction, you may have the right to:</p>
+        <ul>
+            <li><strong>Access</strong> &mdash; request a copy of the personal data we hold about you</li>
+            <li><strong>Correction</strong> &mdash; request correction of inaccurate or incomplete information</li>
+            <li><strong>Deletion</strong> &mdash; request permanent deletion of your personal data (see Section 7)</li>
+            <li><strong>Portability</strong> &mdash; receive your data in a structured, machine-readable format</li>
+            <li><strong>Opt-Out</strong> &mdash; unsubscribe from non-essential marketing communications at any time</li>
+            <li><strong>Restriction</strong> &mdash; request that we limit processing of your data while a dispute is resolved</li>
+        </ul>
+        <p>To exercise any of these rights, contact us at <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a>.</p>
+
+        <!-- 9. Third-Party Services & SDKs -->
+        <h2>9. Third-Party Services &amp; SDKs</h2>
+        <p>Our applications may integrate third-party SDKs or link to external services not operated by Lazy B Studios LLC. We are not responsible for the privacy practices of those third parties. We encourage you to review their policies independently.</p>
+        <p>Any personal data shared with third-party AI services, analytics platforms, or integrated tools will be disclosed in this policy before deployment. We obtain explicit user consent prior to sharing personal data with any such service where required by applicable law.</p>
+
+        <!-- 10. Security -->
+        <h2>10. Security</h2>
+        <p>We implement industry-standard safeguards including TLS encryption for data in transit, encrypted storage for sensitive fields at rest, role-based access controls, and regular internal security reviews. While we take reasonable precautions, no method of internet transmission or electronic storage is completely secure. Report suspected security issues to <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a>.</p>
+
+        <!-- 11. Children's Privacy -->
+        <h2>11. Children&rsquo;s Privacy</h2>
+        <p>Our Services are not directed to children under 13. We do not knowingly collect personal information from children under 13. If we learn we have inadvertently collected such information, we will delete it immediately. If you believe we hold data about a child under 13, contact us at <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a>.</p>
+
+        <!-- 12. International Users -->
+        <h2>12. International Users</h2>
+        <p>Our Services are operated from the United States. If you access our Services from outside the United States, your information may be transferred to, stored, and processed in the United States. By using our Services, you consent to this transfer. We take reasonable steps to ensure your data is treated securely and in accordance with this Privacy Policy regardless of where it is processed.</p>
+
+        <!-- 13. Changes to This Policy -->
+        <h2>13. Changes to This Policy</h2>
+        <p>We may update this Privacy Policy periodically. When we make significant changes, we will update the &ldquo;Last Updated&rdquo; date at the top and, where appropriate, provide notice via in-app notification or email. Continued use of our Services after changes constitutes acceptance of the updated policy.</p>
+
+        <!-- 14. Contact Us -->
+        <h2>14. Contact Us</h2>
+        <p>For any questions, concerns, or requests regarding this Privacy Policy or our data practices:</p>
+        <div class="contact-block">
+            <p><strong style="color:rgba(255,255,255,0.8);">Lazy B Studios LLC</strong></p>
+            <p>940 O&rsquo;Neal Ln, Baton Rouge, LA 70816</p>
+            <p>Email: <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a></p>
+            <p style="color:rgba(255,255,255,0.38);">Response time: within 5 business days</p>
+        </div>
+
+    </main>
+
+    <!-- ── FOOTER ── -->
+    <footer>
+        <div class="footer-company">Lazy B Studios LLC</div>
+        <div style="color:rgba(255,255,255,0.28); margin-bottom:14px;">
+            940 O'Neal Ln, Baton Rouge, LA 70816
+        </div>
+        <div style="margin-bottom:14px;">
+            <a href="index.html">Home</a> &nbsp;&middot;&nbsp;
+            <a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp;
+            <a href="terms.html">Terms of Service</a> &nbsp;&middot;&nbsp;
+            <a href="mailto:support@lazybstudios.com">Contact</a>
+        </div>
+        <p>&copy; 2026 Lazy B Studios LLC. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
