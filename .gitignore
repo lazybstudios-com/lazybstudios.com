@@ -1,0 +1,18 @@
+# Local working notes — keep on disk, never deploy
+APP_STORE_CHECKLIST.md
+
+# Screenshots / scratch images
+*.png
+!**/icon-*.png
+!**/logo-*.png
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Node
+node_modules/
+.env
+.env.local
