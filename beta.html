@@ -214,11 +214,21 @@
                 <input type="email" name="email" class="form-input" placeholder="your@email.com" autocomplete="email" required>
                 <select name="app" class="form-input">
                     <option value="" disabled selected>Which app are you most interested in? (optional)</option>
-                    <option value="Bill Reminder">Bill Reminder</option>
-                    <option value="Golf Tracker">Golf Tracker</option>
-                    <option value="Golden Days">Golden Days</option>
-                    <option value="Full Stroke">Full Stroke</option>
-                    <option value="SampleFlow">SampleFlow</option>
+                    <optgroup label="Launching Soon">
+                        <option value="Bill Reminder">Bill Reminder</option>
+                        <option value="Golf Tracker">Golf Tracker</option>
+                    </optgroup>
+                    <optgroup label="In Development">
+                        <option value="Full Stroke">Full Stroke</option>
+                        <option value="SampleFlow">SampleFlow</option>
+                    </optgroup>
+                    <optgroup label="Research &amp; Development (Concepts)">
+                        <option value="Golden Days">Golden Days</option>
+                        <option value="Signops Pro">Signops Pro</option>
+                        <option value="Firewood Delivery">Firewood Delivery</option>
+                        <option value="Macro Dieting">Macro Dieting</option>
+                        <option value="Service Industry App">Service Industry App</option>
+                    </optgroup>
                     <option value="Any / All">Any / All of them</option>
                 </select>
                 <button type="submit" class="submit" id="betaBtn">Join the Beta Lab</button>

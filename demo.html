@@ -226,11 +226,17 @@
                 </div>
                 <select name="app" class="form-input">
                     <option value="" disabled selected>Which solution? (optional)</option>
-                    <option value="Chemflo Suite">Chemflo Suite</option>
-                    <option value="Full Stroke">Full Stroke</option>
-                    <option value="Golden Days">Golden Days</option>
-                    <option value="Signops Pro">Signops Pro</option>
-                    <option value="SampleFlow">SampleFlow</option>
+                    <optgroup label="Live">
+                        <option value="Chemflo Suite">Chemflo Suite</option>
+                    </optgroup>
+                    <optgroup label="In Development">
+                        <option value="Full Stroke">Full Stroke</option>
+                        <option value="SampleFlow">SampleFlow</option>
+                    </optgroup>
+                    <optgroup label="Research &amp; Development (Concepts)">
+                        <option value="Golden Days">Golden Days</option>
+                        <option value="Signops Pro">Signops Pro</option>
+                    </optgroup>
                     <option value="Other">Other / Not sure yet</option>
                 </select>
                 <textarea name="message" class="form-input" placeholder="Tell us about your project (optional)" rows="4"></textarea>
