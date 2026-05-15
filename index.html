@@ -57,6 +57,42 @@
 
         .nav-contact:hover { color: rgba(255,255,255,0.85); }
 
+        .nav-links {
+            display: flex;
+            gap: 22px;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.82rem;
+            font-weight: 500;
+            color: rgba(255,255,255,0.5);
+            text-decoration: none;
+            transition: color 0.18s;
+            white-space: nowrap;
+        }
+
+        .nav-link:hover { color: rgba(255,255,255,0.88); }
+
+        .nav-cta {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: #ffa000;
+            text-decoration: none;
+            border: 1px solid rgba(255,160,0,0.42);
+            border-radius: 7px;
+            padding: 6px 14px;
+            transition: background 0.18s, border-color 0.18s, color 0.18s;
+            white-space: nowrap;
+        }
+
+        .nav-cta:hover {
+            background: rgba(255,160,0,0.12);
+            border-color: rgba(255,160,0,0.7);
+            color: #ffb733;
+        }
+
         /* ── HERO ── */
         .hero {
             text-align: center;
@@ -212,9 +248,10 @@
             letter-spacing: 0.06em;
         }
 
-        .badge-soon { background: rgba(255,160,0,0.14); color: #ffa000; }
-        .badge-dev  { background: rgba(16,185,129,0.13); color: #34d399; border: 1px solid rgba(52,211,153,0.2); }
-        .badge-ent  { background: rgba(15,52,96,0.7); color: #64b5f6; border: 1px solid rgba(100,181,246,0.22); }
+        .badge-soon    { background: rgba(255,160,0,0.14); color: #ffa000; }
+        .badge-ent     { background: rgba(15,52,96,0.7); color: #64b5f6; border: 1px solid rgba(100,181,246,0.22); }
+        .badge-dev     { background: rgba(100,181,246,0.13); color: #64b5f6; }
+        .badge-private { background: rgba(206,147,216,0.13); color: #ce93d8; }
 
         .app-desc {
             font-size: 0.84rem;
@@ -258,6 +295,212 @@
             background: rgba(100,181,246,0.08);
             border-color: rgba(100,181,246,0.55);
         }
+
+        .client-login-btn {
+            display: inline-block;
+            font-size: 0.78rem;
+            font-weight: 600;
+            color: rgba(206,147,216,0.92);
+            text-decoration: none;
+            border: 1px solid rgba(206,147,216,0.3);
+            border-radius: 7px;
+            padding: 5px 14px;
+            transition: background 0.18s, border-color 0.18s;
+        }
+
+        .client-login-btn:hover {
+            background: rgba(206,147,216,0.1);
+            border-color: rgba(206,147,216,0.6);
+        }
+
+        .card-actions {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            align-items: center;
+        }
+
+        /* ── GOOGLE PLAY BUTTON (Coming Soon / disabled) ── */
+        .play-store-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #000;
+            border: 1px solid rgba(255,255,255,0.22);
+            border-radius: 9px;
+            padding: 7px 14px 7px 12px;
+            color: #fff;
+            text-decoration: none;
+            font-family: 'DM Sans', sans-serif;
+            cursor: not-allowed;
+            opacity: 0.6;
+            user-select: none;
+            transition: opacity 0.2s, border-color 0.2s;
+        }
+
+        .play-store-btn[aria-disabled="true"]:hover {
+            opacity: 0.78;
+            border-color: rgba(255,255,255,0.34);
+        }
+
+        .play-icon {
+            width: 20px;
+            height: 22px;
+            flex-shrink: 0;
+            color: #fff;
+        }
+
+        .play-btn-text {
+            display: flex;
+            flex-direction: column;
+            line-height: 1.1;
+            text-align: left;
+        }
+
+        .play-btn-small {
+            font-size: 0.56rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.72);
+        }
+
+        .play-btn-big {
+            font-size: 0.95rem;
+            font-weight: 600;
+            letter-spacing: 0.01em;
+        }
+
+        .coming-soon-note {
+            font-size: 0.7rem;
+            font-weight: 600;
+            color: rgba(255,160,0,0.78);
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+        }
+
+        /* ── RESEARCH & DEVELOPMENT LIST ── */
+        .rd-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .rd-item {
+            display: flex;
+            align-items: baseline;
+            gap: 14px;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.025);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-left: 3px solid rgba(220,60,60,0.32);
+            border-radius: 10px;
+        }
+
+        .rd-name {
+            font-weight: 600;
+            font-size: 0.92rem;
+            color: rgba(255,255,255,0.8);
+            flex-shrink: 0;
+            min-width: 175px;
+        }
+
+        .rd-desc {
+            font-size: 0.82rem;
+            color: rgba(255,255,255,0.44);
+            line-height: 1.55;
+            flex: 1;
+        }
+
+        .rd-stage {
+            display: inline-block;
+            font-size: 0.55rem;
+            font-weight: 700;
+            color: rgba(220,60,60,0.78);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-left: 8px;
+        }
+
+        /* ── CLIENT PORTAL PLACEHOLDER ── */
+        .portal-section {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 0 20px 60px;
+        }
+
+        .portal-card {
+            background: linear-gradient(155deg, rgba(255,160,0,0.07) 0%, rgba(15,15,26,0.6) 70%);
+            border: 1px solid rgba(255,160,0,0.2);
+            border-radius: 16px;
+            padding: 32px 28px;
+            text-align: center;
+        }
+
+        .portal-label {
+            font-size: 0.65rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.22em;
+            color: #ffa000;
+            margin-bottom: 12px;
+        }
+
+        .portal-title {
+            font-family: 'DM Serif Display', Georgia, serif;
+            font-size: 1.55rem;
+            font-weight: 400;
+            margin-bottom: 8px;
+            color: rgba(255,255,255,0.92);
+        }
+
+        .portal-subtext {
+            font-size: 0.88rem;
+            color: rgba(255,255,255,0.5);
+            line-height: 1.6;
+            max-width: 440px;
+            margin: 0 auto 22px;
+        }
+
+        .portal-fields {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            max-width: 360px;
+            margin: 0 auto;
+        }
+
+        .portal-fields .form-input {
+            background: rgba(0,0,0,0.28);
+            border-color: rgba(255,160,0,0.18);
+        }
+
+        .portal-btn {
+            background: rgba(255,160,0,0.16);
+            color: #ffa000;
+            border: 1px solid rgba(255,160,0,0.5);
+            border-radius: 10px;
+            padding: 12px 24px;
+            font-size: 0.88rem;
+            font-weight: 700;
+            font-family: 'DM Sans', sans-serif;
+            cursor: not-allowed;
+            opacity: 0.88;
+            margin-top: 4px;
+        }
+
+        .portal-note {
+            margin-top: 14px;
+            font-size: 0.72rem;
+            color: rgba(255,255,255,0.35);
+        }
+
+        .portal-note a {
+            color: rgba(255,160,0,0.78);
+            text-decoration: none;
+        }
+
+        .portal-note a:hover { color: #ffa000; }
 
         /* ── SHARED FORM STYLES ── */
         .form-input {
@@ -466,7 +709,7 @@
             margin-bottom: 4px;
         }
 
-        .footer-address { color: rgba(255,255,255,0.3); margin-bottom: 16px; }
+        .footer-address { color: rgba(255,255,255,0.42); margin-bottom: 16px; }
         .footer-links   { margin-bottom: 12px; }
 
         footer a {
@@ -477,6 +720,13 @@
 
         footer a:hover { color: rgba(255,255,255,0.72); }
 
+        .footer-privacy {
+            color: #ffa000 !important;
+            font-weight: 600;
+        }
+
+        .footer-privacy:hover { color: #ffb733 !important; }
+
         /* ── RESPONSIVE ── */
         @media (max-width: 540px) {
             .logo-text       { font-size: 2rem; }
@@ -484,7 +734,11 @@
             .section-heading { font-size: 1.75rem; }
             .app-icon        { width: 44px; height: 44px; }
             .app-card        { padding: 16px 14px; }
-            .nav-inner       { padding: 10px 16px; }
+            .nav-inner       { padding: 10px 16px; gap: 10px; }
+            .nav-links       { display: none; }
+            .rd-item         { flex-direction: column; gap: 4px; align-items: flex-start; }
+            .rd-name         { min-width: 0; }
+            .portal-card     { padding: 26px 18px; }
         }
     </style>
 </head>
@@ -494,7 +748,11 @@
     <nav class="site-nav">
         <div class="nav-inner">
             <a href="index.html" class="nav-brand">Lazy B Studios</a>
-            <a href="mailto:support@lazybstudios.com" class="nav-contact">Contact</a>
+            <div class="nav-links">
+                <a href="#public-apps" class="nav-link">Public Apps</a>
+                <a href="#enterprise" class="nav-link">Enterprise Solutions</a>
+            </div>
+            <a href="#client-portal" class="nav-cta">Client Portal</a>
         </div>
     </nav>
 
@@ -510,21 +768,28 @@
     <!-- ── PORTFOLIO ── -->
     <section class="apps-section">
 
-        <!-- Consumer Apps -->
-        <div class="section-group">
-            <div class="section-title">Consumer Apps</div>
+        <!-- Public Apps (Play Store focus) -->
+        <div class="section-group" id="public-apps">
+            <div class="section-title">Public Apps</div>
 
             <div class="app-card consumer-card">
-                <div class="app-icon" style="background:#f59e0b;">
-                    <span class="app-icon-text" style="color:#000;">FS</span>
-                </div>
+                <div class="app-icon" style="background:#1e3a5f; font-size:1.5rem;">&#128181;</div>
                 <div class="app-info">
                     <div class="app-name-row">
-                        <span class="app-name">FullStroke</span>
-                        <span class="badge badge-dev">IN DEVELOPMENT</span>
+                        <span class="app-name">Bill Reminder</span>
                     </div>
-                    <p class="app-desc">FullStroke streamlines every aspect of a small engine repair shop, from creating work orders and managing customer records to tracking parts and generating professional invoices. Built for independent mechanics, it puts everything you need in a single, intuitive app.</p>
-                    <a href="#beta" class="learn-more-btn">Learn More</a>
+                    <p class="app-desc">Bill Reminder keeps every recurring payment organized in a clean dashboard, with smart due-date alerts so you never miss a bill again. Set it up once and stay on top of your finances without any ongoing effort.</p>
+                    <div class="card-actions">
+                        <span class="play-store-btn" role="button" aria-disabled="true" aria-label="Get it on Google Play — Coming Soon">
+                            <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M3.6 1.5c-.4.3-.6.8-.6 1.4v18.2c0 .6.2 1.1.6 1.4l.1.1L13.8 12 3.7 1.4l-.1.1zm11.3 11.2 3.3-3.3-3.3-3.3 2.4-1.4c.9-.5 1.9-.5 2.5 0l2.6 1.5c1.1.6 1.1 1.7 0 2.4l-2.6 1.5c-.7.4-1.7.4-2.5 0l-2.4-1.4zm-1.1 1.1L4 23.4l.4.1c.5 0 1-.2 1.5-.5l11.1-6.4-3.2-3.2v-.6zm0-3.6L4.4.6l-.4.1L13.8 11l-.6-.8z"/>
+                            </svg>
+                            <span class="play-btn-text">
+                                <span class="play-btn-small">Coming Soon to</span>
+                                <span class="play-btn-big">Google Play</span>
+                            </span>
+                        </span>
+                    </div>
                 </div>
             </div>
 
@@ -533,29 +798,26 @@
                 <div class="app-info">
                     <div class="app-name-row">
                         <span class="app-name">Golf Tracker</span>
-                        <span class="badge badge-dev">IN DEVELOPMENT</span>
                     </div>
                     <p class="app-desc">Golf Tracker calculates and maintains your official World Handicap System index, making it easy to post rounds and watch your game improve over time. Compete with friends through built-in social scoring, leaderboards, and group rounds.</p>
-                    <a href="#beta" class="learn-more-btn">Learn More</a>
-                </div>
-            </div>
-
-            <div class="app-card consumer-card">
-                <div class="app-icon" style="background:#1e3a5f; font-size:1.5rem;">&#128181;</div>
-                <div class="app-info">
-                    <div class="app-name-row">
-                        <span class="app-name">Bill Reminder</span>
-                        <span class="badge badge-dev">IN DEVELOPMENT</span>
+                    <div class="card-actions">
+                        <span class="play-store-btn" role="button" aria-disabled="true" aria-label="Get it on Google Play — Coming Soon">
+                            <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <path d="M3.6 1.5c-.4.3-.6.8-.6 1.4v18.2c0 .6.2 1.1.6 1.4l.1.1L13.8 12 3.7 1.4l-.1.1zm11.3 11.2 3.3-3.3-3.3-3.3 2.4-1.4c.9-.5 1.9-.5 2.5 0l2.6 1.5c1.1.6 1.1 1.7 0 2.4l-2.6 1.5c-.7.4-1.7.4-2.5 0l-2.4-1.4zm-1.1 1.1L4 23.4l.4.1c.5 0 1-.2 1.5-.5l11.1-6.4-3.2-3.2v-.6zm0-3.6L4.4.6l-.4.1L13.8 11l-.6-.8z"/>
+                            </svg>
+                            <span class="play-btn-text">
+                                <span class="play-btn-small">Coming Soon to</span>
+                                <span class="play-btn-big">Google Play</span>
+                            </span>
+                        </span>
                     </div>
-                    <p class="app-desc">Bill Reminder keeps every recurring payment organized in a clean dashboard, with smart due-date alerts so you never miss a bill again. Set it up once and stay on top of your finances without any ongoing effort.</p>
-                    <a href="#beta" class="learn-more-btn">Learn More</a>
                 </div>
             </div>
         </div>
 
-        <!-- Enterprise Solutions -->
-        <div class="section-group">
-            <div class="section-title">Enterprise Solutions</div>
+        <!-- Enterprise & In-Development Solutions -->
+        <div class="section-group" id="enterprise">
+            <div class="section-title">Custom Enterprise Solutions</div>
 
             <div class="app-card enterprise-card">
                 <div class="app-icon" style="background:#0d47a1;">
@@ -564,10 +826,45 @@
                 <div class="app-info">
                     <div class="app-name-row">
                         <span class="app-name">Chemflo-Suite</span>
-                        <span class="badge badge-ent">ENTERPRISE EDITION</span>
+                        <span class="badge badge-private">PRIVATE BETA</span>
                     </div>
                     <p class="app-desc">Chemflo-Suite is an enterprise-grade platform for monitoring chemical flow processes and managing inventory across industrial operations. It delivers real-time analytics, compliance tracking, and centralized controls designed for regulated environments.</p>
-                    <a href="#demo" class="demo-btn">Request a Demo</a>
+                    <div class="card-actions">
+                        <a href="#demo" class="demo-btn">Request a Demo</a>
+                        <a href="#client-portal" class="client-login-btn">Client Login</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-card enterprise-card">
+                <div class="app-icon" style="background:#f59e0b;">
+                    <span class="app-icon-text" style="color:#000;">FS</span>
+                </div>
+                <div class="app-info">
+                    <div class="app-name-row">
+                        <span class="app-name">FullStroke</span>
+                        <span class="badge badge-dev">IN ACTIVE DEVELOPMENT</span>
+                    </div>
+                    <p class="app-desc">FullStroke streamlines every aspect of a small engine repair shop, from creating work orders and managing customer records to tracking parts and generating professional invoices. Built for independent mechanics, it puts everything you need in a single, intuitive app.</p>
+                    <div class="card-actions">
+                        <a href="#demo" class="demo-btn">Request a Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="app-card enterprise-card">
+                <div class="app-icon" style="background:#5d4037;">
+                    <span class="app-icon-text" style="color:#ffcc80;">GD</span>
+                </div>
+                <div class="app-info">
+                    <div class="app-name-row">
+                        <span class="app-name">GoldenDays</span>
+                        <span class="badge badge-private">PRIVATE BETA</span>
+                    </div>
+                    <p class="app-desc">GoldenDays is a private family journaling app for recording memories, milestones, and care notes. The Circle of Caregivers feature lets a primary account holder securely share specific notes or to-dos with invited family members and caregivers.</p>
+                    <div class="card-actions">
+                        <a href="#demo" class="demo-btn">Request a Demo</a>
+                    </div>
                 </div>
             </div>
 
@@ -578,32 +875,58 @@
                 <div class="app-info">
                     <div class="app-name-row">
                         <span class="app-name">Signops-Pro</span>
-                        <span class="badge badge-ent">ENTERPRISE EDITION</span>
+                        <span class="badge badge-dev">IN ACTIVE DEVELOPMENT</span>
                     </div>
                     <p class="app-desc">Signops-Pro is a comprehensive workflow management platform built specifically for signage fabrication companies, from design approval through field installation. Coordinate job scheduling, track crews, manage client approvals, and keep every project on time and on budget.</p>
-                    <a href="#demo" class="demo-btn">Request a Demo</a>
-                </div>
-            </div>
-        </div>
-
-        <!-- The Lab -->
-        <div class="section-group">
-            <div class="section-title">The Lab</div>
-
-            <div class="app-card lab-card coming-soon">
-                <div class="app-icon" style="background:#7b1c1c;">
-                    <span class="app-icon-text" style="color:#ef9a9a;">SF</span>
-                </div>
-                <div class="app-info">
-                    <div class="app-name-row">
-                        <span class="app-name">SampleFlow</span>
-                        <span class="badge badge-soon">COMING SOON</span>
+                    <div class="card-actions">
+                        <a href="#demo" class="demo-btn">Request a Demo</a>
                     </div>
-                    <p class="app-desc">SampleFlow is a smart logistics platform designed to help brand teams manage every product sample from request through return. Every step of the sample lifecycle is tracked automatically &mdash; no more lost samples, missed deadlines, or manual spreadsheets.</p>
                 </div>
             </div>
         </div>
 
+        <!-- Research & Development -->
+        <div class="section-group" id="rd">
+            <div class="section-title">Research &amp; Development</div>
+            <p class="app-desc" style="margin-bottom:18px;">A look at our technical roadmap. The following projects are in early prototyping and are not yet available as products.</p>
+
+            <div class="rd-list">
+                <div class="rd-item">
+                    <div class="rd-name">SampleFlow <span class="rd-stage">Prototype</span></div>
+                    <div class="rd-desc">A smart logistics platform exploring how brand teams can track product samples from request through return, with TikTok Shop affiliate workflows layered on top.</div>
+                </div>
+                <div class="rd-item">
+                    <div class="rd-name">Firewood Delivery <span class="rd-stage">Prototype</span></div>
+                    <div class="rd-desc">A seasonal delivery and route-planning concept exploring lightweight GPS routing for local-supply operators.</div>
+                </div>
+                <div class="rd-item">
+                    <div class="rd-name">Macro Dieting <span class="rd-stage">Prototype</span></div>
+                    <div class="rd-desc">Research into a streamlined macro-tracking experience focused on weekly planning over per-meal logging.</div>
+                </div>
+                <div class="rd-item">
+                    <div class="rd-name">Service Industry App <span class="rd-stage">Prototype</span></div>
+                    <div class="rd-desc">An early-stage tool for restaurants and hospitality teams &mdash; shift coordination, tipping, and back-of-house communication.</div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- ── CLIENT PORTAL PLACEHOLDER ── -->
+    <section class="portal-section" id="client-portal">
+        <div class="portal-card">
+            <div class="portal-label">Client Portal</div>
+            <h2 class="portal-title">Enterprise Client Sign-In</h2>
+            <p class="portal-subtext">Existing enterprise clients (Chemflo-Suite, FullStroke, GoldenDays, Signops-Pro) will access their dashboards here. Secure sign-in is rolling out alongside our 2026 launch.</p>
+            <form class="portal-fields" onsubmit="event.preventDefault();" aria-label="Client portal placeholder">
+                <input type="email" class="form-input" placeholder="Work email" disabled aria-disabled="true">
+                <input type="password" class="form-input" placeholder="Password" disabled aria-disabled="true">
+                <button type="button" class="portal-btn" disabled aria-disabled="true">Sign In &mdash; Coming Soon</button>
+            </form>
+            <p class="portal-note">
+                Need access now? <a href="mailto:support@lazybstudios.com?subject=Client%20Portal%20Access">Contact support</a> to request your enterprise login.
+            </p>
+        </div>
     </section>
 
     <!-- ── ENTERPRISE DEMO FORM ── -->
@@ -644,12 +967,13 @@
     <footer>
         <div class="footer-company">Lazy B Studios LLC</div>
         <div class="footer-address">
-            940 O'Neal Ln, Baton Rouge, LA 70816<br>
+            940 O'Neal Ln, Baton Rouge, LA 70816, United States<br>
             <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a>
         </div>
         <div class="footer-links">
-            <a href="privacy.html">Privacy Policy</a> &nbsp;&middot;&nbsp;
+            <a href="privacy.html" class="footer-privacy">Privacy Policy</a> &nbsp;&middot;&nbsp;
             <a href="terms.html">Terms of Service</a> &nbsp;&middot;&nbsp;
+            <a href="#client-portal">Client Portal</a> &nbsp;&middot;&nbsp;
             <a href="mailto:support@lazybstudios.com">Contact</a>
         </div>
         <p>&copy; 2026 Lazy B Studios LLC. All rights reserved.</p>

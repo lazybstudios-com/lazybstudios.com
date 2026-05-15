@@ -170,7 +170,7 @@ async function checkNewAuth() {
     log('Not authenticated. Please sign in to the main app first.', 'warning');
     statusEl.innerHTML = `
       <p class="warning">⚠️ Not signed in.</p>
-      <p>Please go to <a href="https://flextechla.github.io/golfhandicap/" target="_blank">Golf Handicap App</a>, sign in, then come back here.</p>
+      <p>Please go to <a href="https://lazybstudios.com/golfhandicap/" target="_blank">Golf Handicap App</a>, sign in, then come back here.</p>
     `;
     return false;
   }
@@ -446,7 +446,7 @@ async function migrateData() {
         <li>Rounds migrated: ${roundsCreated}</li>
         ${errors.length > 0 ? `<li class="error">Errors: ${errors.length}</li>` : ''}
       </ul>
-      <p><a href="https://flextechla.github.io/golfhandicap/" target="_blank" class="btn btn-primary" style="display: inline-block; margin-top: 1rem; text-decoration: none;">Go to Golf Handicap App →</a></p>
+      <p><a href="https://lazybstudios.com/golfhandicap/" target="_blank" class="btn btn-primary" style="display: inline-block; margin-top: 1rem; text-decoration: none;">Go to Golf Handicap App →</a></p>
     `;
     
     log('Migration complete!', 'success');
