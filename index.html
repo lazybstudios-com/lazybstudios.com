@@ -252,6 +252,10 @@
         .badge-ent     { background: rgba(15,52,96,0.7); color: #64b5f6; border: 1px solid rgba(100,181,246,0.22); }
         .badge-dev     { background: rgba(100,181,246,0.13); color: #64b5f6; }
         .badge-private { background: rgba(206,147,216,0.13); color: #ce93d8; }
+        .badge-live    { background: rgba(46,125,50,0.18); color: #81c784; border: 1px solid rgba(129,199,132,0.32); }
+
+        .app-card.live-card { border-left-color: rgba(129,199,132,0.4); }
+        .app-card.live-card:not(.coming-soon):hover { border-left-color: rgba(129,199,132,0.7); }
 
         .app-desc {
             font-size: 0.84rem;
@@ -750,7 +754,7 @@
             <a href="index.html" class="nav-brand">Lazy B Studios</a>
             <div class="nav-links">
                 <a href="#public-apps" class="nav-link">Public Apps</a>
-                <a href="#enterprise" class="nav-link">Enterprise Solutions</a>
+                <a href="#solutions" class="nav-link">Solutions</a>
             </div>
             <a href="#client-portal" class="nav-cta">Client Portal</a>
         </div>
@@ -766,7 +770,7 @@
     </section>
 
     <!-- ── PORTFOLIO ── -->
-    <section class="apps-section">
+    <section class="apps-section" id="solutions">
 
         <!-- Public Apps (Play Store focus) -->
         <div class="section-group" id="public-apps">
@@ -777,9 +781,11 @@
                 <div class="app-info">
                     <div class="app-name-row">
                         <span class="app-name">Bill Reminder</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                     </div>
                     <p class="app-desc">Bill Reminder keeps every recurring payment organized in a clean dashboard, with smart due-date alerts so you never miss a bill again. Set it up once and stay on top of your finances without any ongoing effort.</p>
                     <div class="card-actions">
+                        <a href="bill-reminder.html" class="learn-more-btn">Learn More</a>
                         <span class="play-store-btn" role="button" aria-disabled="true" aria-label="Get it on Google Play — Coming Soon">
                             <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M3.6 1.5c-.4.3-.6.8-.6 1.4v18.2c0 .6.2 1.1.6 1.4l.1.1L13.8 12 3.7 1.4l-.1.1zm11.3 11.2 3.3-3.3-3.3-3.3 2.4-1.4c.9-.5 1.9-.5 2.5 0l2.6 1.5c1.1.6 1.1 1.7 0 2.4l-2.6 1.5c-.7.4-1.7.4-2.5 0l-2.4-1.4zm-1.1 1.1L4 23.4l.4.1c.5 0 1-.2 1.5-.5l11.1-6.4-3.2-3.2v-.6zm0-3.6L4.4.6l-.4.1L13.8 11l-.6-.8z"/>
@@ -798,9 +804,11 @@
                 <div class="app-info">
                     <div class="app-name-row">
                         <span class="app-name">Golf Tracker</span>
+                        <span class="badge badge-soon">COMING SOON</span>
                     </div>
                     <p class="app-desc">Golf Tracker calculates and maintains your official World Handicap System index, making it easy to post rounds and watch your game improve over time. Compete with friends through built-in social scoring, leaderboards, and group rounds.</p>
                     <div class="card-actions">
+                        <a href="golf-tracker.html" class="learn-more-btn">Learn More</a>
                         <span class="play-store-btn" role="button" aria-disabled="true" aria-label="Get it on Google Play — Coming Soon">
                             <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M3.6 1.5c-.4.3-.6.8-.6 1.4v18.2c0 .6.2 1.1.6 1.4l.1.1L13.8 12 3.7 1.4l-.1.1zm11.3 11.2 3.3-3.3-3.3-3.3 2.4-1.4c.9-.5 1.9-.5 2.5 0l2.6 1.5c1.1.6 1.1 1.7 0 2.4l-2.6 1.5c-.7.4-1.7.4-2.5 0l-2.4-1.4zm-1.1 1.1L4 23.4l.4.1c.5 0 1-.2 1.5-.5l11.1-6.4-3.2-3.2v-.6zm0-3.6L4.4.6l-.4.1L13.8 11l-.6-.8z"/>
@@ -815,26 +823,32 @@
             </div>
         </div>
 
-        <!-- Enterprise & In-Development Solutions -->
-        <div class="section-group" id="enterprise">
-            <div class="section-title">Custom Enterprise Solutions</div>
+        <!-- Live Solutions -->
+        <div class="section-group" id="live">
+            <div class="section-title">Live Solutions</div>
 
-            <div class="app-card enterprise-card">
+            <div class="app-card live-card">
                 <div class="app-icon" style="background:#0d47a1;">
                     <span class="app-icon-text" style="color:#90caf9;">CF</span>
                 </div>
                 <div class="app-info">
                     <div class="app-name-row">
                         <span class="app-name">Chemflo-Suite</span>
-                        <span class="badge badge-private">PRIVATE BETA</span>
+                        <span class="badge badge-live">LIVE &amp; DEPLOYED</span>
                     </div>
-                    <p class="app-desc">Chemflo-Suite is an enterprise-grade platform for monitoring chemical flow processes and managing inventory across industrial operations. It delivers real-time analytics, compliance tracking, and centralized controls designed for regulated environments.</p>
+                    <p class="app-desc">Enterprise platform for monitoring chemical flow processes and managing inventory across regulated industrial operations. Real-time analytics, compliance tracking, and centralized controls &mdash; currently in production with enterprise customers.</p>
                     <div class="card-actions">
-                        <a href="#demo" class="demo-btn">Request a Demo</a>
+                        <a href="chemflo-suite.html" class="learn-more-btn">Learn More</a>
+                        <a href="demo.html" class="demo-btn">Request a Demo</a>
                         <a href="#client-portal" class="client-login-btn">Client Login</a>
                     </div>
                 </div>
             </div>
+        </div>
+
+        <!-- In Development -->
+        <div class="section-group" id="in-development">
+            <div class="section-title">In Development</div>
 
             <div class="app-card enterprise-card">
                 <div class="app-icon" style="background:#f59e0b;">
@@ -845,9 +859,10 @@
                         <span class="app-name">FullStroke</span>
                         <span class="badge badge-dev">IN ACTIVE DEVELOPMENT</span>
                     </div>
-                    <p class="app-desc">FullStroke streamlines every aspect of a small engine repair shop, from creating work orders and managing customer records to tracking parts and generating professional invoices. Built for independent mechanics, it puts everything you need in a single, intuitive app.</p>
+                    <p class="app-desc">A complete repair shop in your pocket &mdash; work orders, customer records, parts inventory, and invoices, with SMS customer updates sent automatically via Twilio. Built for independent small-engine and equipment mechanics.</p>
                     <div class="card-actions">
-                        <a href="#demo" class="demo-btn">Request a Demo</a>
+                        <a href="fullstroke.html" class="learn-more-btn">Learn More</a>
+                        <a href="demo.html" class="demo-btn">Request a Demo</a>
                     </div>
                 </div>
             </div>
@@ -859,11 +874,12 @@
                 <div class="app-info">
                     <div class="app-name-row">
                         <span class="app-name">GoldenDays</span>
-                        <span class="badge badge-private">PRIVATE BETA</span>
+                        <span class="badge badge-dev">IN ACTIVE DEVELOPMENT</span>
                     </div>
-                    <p class="app-desc">GoldenDays is a private family journaling app for recording memories, milestones, and care notes. The Circle of Caregivers feature lets a primary account holder securely share specific notes or to-dos with invited family members and caregivers.</p>
+                    <p class="app-desc">A private family journal for memories, milestones, and care notes. The Circle of Caregivers feature lets a primary account holder securely share selected notes or to-dos with invited family members and caregivers.</p>
                     <div class="card-actions">
-                        <a href="#demo" class="demo-btn">Request a Demo</a>
+                        <a href="goldendays.html" class="learn-more-btn">Learn More</a>
+                        <a href="demo.html" class="demo-btn">Request a Demo</a>
                     </div>
                 </div>
             </div>
@@ -877,12 +893,34 @@
                         <span class="app-name">Signops-Pro</span>
                         <span class="badge badge-dev">IN ACTIVE DEVELOPMENT</span>
                     </div>
-                    <p class="app-desc">Signops-Pro is a comprehensive workflow management platform built specifically for signage fabrication companies, from design approval through field installation. Coordinate job scheduling, track crews, manage client approvals, and keep every project on time and on budget.</p>
+                    <p class="app-desc">An end-to-end workflow tool for signage fabrication shops &mdash; design approval, production scheduling, crew dispatch, and field install &mdash; built for multi-user enterprise rollout.</p>
                     <div class="card-actions">
-                        <a href="#demo" class="demo-btn">Request a Demo</a>
+                        <a href="signops-pro.html" class="learn-more-btn">Learn More</a>
+                        <a href="demo.html" class="demo-btn">Request a Demo</a>
                     </div>
                 </div>
             </div>
+
+            <div class="app-card enterprise-card">
+                <div class="app-icon" style="background:#7b1c1c;">
+                    <span class="app-icon-text" style="color:#ef9a9a;">SF</span>
+                </div>
+                <div class="app-info">
+                    <div class="app-name-row">
+                        <span class="app-name">SampleFlow</span>
+                        <span class="badge badge-dev">IN ACTIVE DEVELOPMENT</span>
+                    </div>
+                    <p class="app-desc">A logistics tool for brand teams managing product samples &mdash; from request, to creator, to TikTok Shop video, to return &mdash; with affiliate-link tracking built in. No private TikTok credentials stored.</p>
+                    <div class="card-actions">
+                        <a href="sampleflow.html" class="learn-more-btn">Learn More</a>
+                        <a href="demo.html" class="demo-btn">Request a Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <p class="app-desc" style="text-align:center; margin-top:8px; font-size:0.86rem;">
+                Want first access to these apps? <a href="beta.html" style="color:#ffa000; text-decoration:none; font-weight:600;">Join the Beta Lab &rarr;</a>
+            </p>
         </div>
 
         <!-- Research & Development -->
@@ -891,10 +929,6 @@
             <p class="app-desc" style="margin-bottom:18px;">A look at our technical roadmap. The following projects are in early prototyping and are not yet available as products.</p>
 
             <div class="rd-list">
-                <div class="rd-item">
-                    <div class="rd-name">SampleFlow <span class="rd-stage">Prototype</span></div>
-                    <div class="rd-desc">A smart logistics platform exploring how brand teams can track product samples from request through return, with TikTok Shop affiliate workflows layered on top.</div>
-                </div>
                 <div class="rd-item">
                     <div class="rd-name">Firewood Delivery <span class="rd-stage">Prototype</span></div>
                     <div class="rd-desc">A seasonal delivery and route-planning concept exploring lightweight GPS routing for local-supply operators.</div>
@@ -929,40 +963,6 @@
         </div>
     </section>
 
-    <!-- ── ENTERPRISE DEMO FORM ── -->
-    <section class="demo-section" id="demo">
-        <div class="section-inner">
-            <div class="section-eyebrow blue">Enterprise</div>
-            <h2 class="section-heading">Request a Demo</h2>
-            <p class="section-subtext">Tell us about your project and we&rsquo;ll get back to you within one business day.</p>
-            <form class="demo-form" id="demoForm">
-                <input type="hidden" name="type" value="demo">
-                <div class="form-row">
-                    <input type="text"  name="name"    class="form-input" placeholder="Your name" required>
-                    <input type="email" name="email"   class="form-input" placeholder="Work email" required>
-                </div>
-                <textarea name="message" class="form-input" placeholder="Tell us about your project (optional)" rows="3"></textarea>
-                <button type="submit" class="demo-submit-btn" id="demoBtn">Send Request</button>
-            </form>
-            <p class="form-hint">Or email us directly at <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a></p>
-        </div>
-    </section>
-
-    <!-- ── BETA LAB ── -->
-    <section class="beta-section" id="beta">
-        <div class="section-inner">
-            <div class="section-eyebrow gold">Beta Lab</div>
-            <h2 class="section-heading">Join the Beta Lab</h2>
-            <p class="section-subtext">Get early access to our latest tools and help shape our development roadmap.</p>
-            <form class="beta-form" id="betaForm">
-                <input type="hidden" name="type" value="beta">
-                <input type="email" name="email" class="form-input" id="betaEmail" placeholder="your@email.com" autocomplete="email" required>
-                <button type="submit" class="beta-submit-btn" id="betaBtn">Join Now</button>
-            </form>
-            <p class="form-hint">Or email us directly at <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a></p>
-        </div>
-    </section>
-
     <!-- ── FOOTER ── -->
     <footer>
         <div class="footer-company">Lazy B Studios LLC</div>
@@ -973,50 +973,12 @@
         <div class="footer-links">
             <a href="privacy.html" class="footer-privacy">Privacy Policy</a> &nbsp;&middot;&nbsp;
             <a href="terms.html">Terms of Service</a> &nbsp;&middot;&nbsp;
+            <a href="delete-data.html">Delete My Data</a> &nbsp;&middot;&nbsp;
             <a href="#client-portal">Client Portal</a> &nbsp;&middot;&nbsp;
             <a href="mailto:support@lazybstudios.com">Contact</a>
         </div>
         <p>&copy; 2026 Lazy B Studios LLC. All rights reserved.</p>
     </footer>
-
-    <script>
-        async function submitForm(form, btn, successText) {
-            var original = btn.textContent;
-            btn.textContent = 'Sending…';
-            btn.disabled = true;
-
-            try {
-                var res = await fetch('/api/contact', {
-                    method: 'POST',
-                    body: JSON.stringify(Object.fromEntries(new FormData(form))),
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
-                });
-
-                if (res.ok) {
-                    btn.textContent = successText;
-                    btn.style.background = '#2e7d32';
-                    btn.style.color = '#a5d6a7';
-                    form.reset();
-                } else {
-                    btn.textContent = 'Try Again';
-                    btn.disabled = false;
-                }
-            } catch (_) {
-                btn.textContent = 'Try Again';
-                btn.disabled = false;
-            }
-        }
-
-        document.getElementById('demoForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            submitForm(this, document.getElementById('demoBtn'), 'Request Sent!');
-        });
-
-        document.getElementById('betaForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            submitForm(this, document.getElementById('betaBtn'), "You’re In!");
-        });
-    </script>
 
 </body>
 </html>

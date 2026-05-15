@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="Golf Tracker — official World Handicap System tracking, group rounds, and social scoring from Lazy B Studios LLC.">
+    <title>Golf Tracker | Lazy B Studios LLC</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9IiMxYTFhMmUiLz48dGV4dCB4PSIyNTYiIHk9IjMwMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxCPC90ZXh0Pjwvc3ZnPg==">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/app-detail.css">
+</head>
+<body>
+
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">Lazy B Studios</a>
+            <a href="index.html" class="nav-back">&larr; Back to Home</a>
+        </div>
+    </nav>
+
+    <header class="app-hero">
+        <div class="hero-inner">
+            <div class="app-icon-lg" style="background:#2e7d32; font-size:2.4rem;">&#9971;</div>
+            <div class="hero-text">
+                <h1 class="app-title">Golf Tracker</h1>
+                <p class="app-tagline">Your official World Handicap System index, your scorecards, and your foursome &mdash; in one app.</p>
+                <span class="badge badge-soon">Coming Soon to Google Play</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-body">
+
+        <h2>Overview</h2>
+        <p>
+            Golf Tracker calculates and maintains your official <strong>World Handicap System</strong> index so you can post rounds, watch your game improve, and play competitive matches with friends across any course in the country.
+        </p>
+        <p>
+            Built by golfers who got tired of paper scorecards and clunky club apps, Golf Tracker keeps the post-round bookkeeping fast and the social side fun.
+        </p>
+
+        <h2>What it does</h2>
+        <ul>
+            <li><strong>Official WHS handicap index</strong> &mdash; calculated using current World Handicap System formulas, updated after every round.</li>
+            <li><strong>Course database with slope &amp; rating</strong> &mdash; tees, slope, and course rating pre-loaded so your differentials are always correct.</li>
+            <li><strong>Score posting in seconds</strong> &mdash; hole-by-hole or total-score entry, with adjusted gross score calculated for you.</li>
+            <li><strong>Social Score Tracking</strong> &mdash; share scores and handicaps within user-created groups (weekend foursome, league, club, family) without making anything public.</li>
+            <li><strong>Group rounds &amp; leaderboards</strong> &mdash; play matches with friends, see live standings, and settle the bets honestly.</li>
+            <li><strong>Round history &amp; trends</strong> &mdash; spot the holes that quietly cost you strokes over time.</li>
+        </ul>
+
+        <h2>Social, not public</h2>
+        <p>
+            Social Score Tracking is opt-in and group-scoped. You see the scores of people in groups you joined or created &mdash; nothing more. We don&rsquo;t publish leaderboards, sell scores to handicap services, or share data with advertisers. You can leave a group at any time, and you can revoke a single round&rsquo;s visibility without affecting your overall index.
+        </p>
+
+        <h2>Privacy &amp; data</h2>
+        <p>
+            Scores, handicap data, and group memberships are stored securely via <strong>Supabase</strong>. You can export your full round history or permanently delete it &mdash; or just your golf history while keeping the rest of your account &mdash; via our <a href="delete-data.html">data deletion portal</a>. Full details in the <a href="privacy.html">Privacy Policy</a>.
+        </p>
+
+        <div class="cta-card">
+            <div class="cta-title">Launching soon on Google Play and the App Store</div>
+            <p class="cta-sub">Golf Tracker isn&rsquo;t live yet. Join the Beta Lab to play test builds before the public launch and help shape the final feature set.</p>
+            <div class="cta-actions">
+                <span class="play-store-btn" role="button" aria-disabled="true" aria-label="Get it on Google Play — Coming Soon">
+                    <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M3.6 1.5c-.4.3-.6.8-.6 1.4v18.2c0 .6.2 1.1.6 1.4l.1.1L13.8 12 3.7 1.4l-.1.1zm11.3 11.2 3.3-3.3-3.3-3.3 2.4-1.4c.9-.5 1.9-.5 2.5 0l2.6 1.5c1.1.6 1.1 1.7 0 2.4l-2.6 1.5c-.7.4-1.7.4-2.5 0l-2.4-1.4zm-1.1 1.1L4 23.4l.4.1c.5 0 1-.2 1.5-.5l11.1-6.4-3.2-3.2v-.6zm0-3.6L4.4.6l-.4.1L13.8 11l-.6-.8z"/>
+                    </svg>
+                    <span class="play-btn-text">
+                        <span class="play-btn-small">Coming Soon to</span>
+                        <span class="play-btn-big">Google Play</span>
+                    </span>
+                </span>
+                <a href="beta.html" class="btn btn-primary-gold">Join the Beta Lab</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-company">Lazy B Studios LLC</div>
+        <div class="footer-address">940 O'Neal Ln, Baton Rouge, LA 70816</div>
+        <div>
+            <a href="index.html">Home</a> &nbsp;&middot;&nbsp;
+            <a href="privacy.html" class="footer-privacy">Privacy Policy</a> &nbsp;&middot;&nbsp;
+            <a href="terms.html">Terms of Service</a> &nbsp;&middot;&nbsp;
+            <a href="delete-data.html">Delete My Data</a> &nbsp;&middot;&nbsp;
+            <a href="mailto:support@lazybstudios.com">Contact</a>
+        </div>
+    </footer>
+
+</body>
+</html>

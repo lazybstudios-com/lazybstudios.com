@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#1a1a2e">
+    <meta name="description" content="FullStroke — repair shop management for small engine and equipment mechanics. By Lazy B Studios LLC.">
+    <title>FullStroke | Lazy B Studios LLC</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9IiMxYTFhMmUiLz48dGV4dCB4PSIyNTYiIHk9IjMwMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxCPC90ZXh0Pjwvc3ZnPg==">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/app-detail.css">
+</head>
+<body>
+
+    <nav class="site-nav">
+        <div class="nav-inner">
+            <a href="index.html" class="nav-brand">Lazy B Studios</a>
+            <a href="index.html" class="nav-back">&larr; Back to Home</a>
+        </div>
+    </nav>
+
+    <header class="app-hero">
+        <div class="hero-inner">
+            <div class="app-icon-lg" style="background:#f59e0b;">
+                <span class="icon-text" style="color:#000;">FS</span>
+            </div>
+            <div class="hero-text">
+                <h1 class="app-title">FullStroke</h1>
+                <p class="app-tagline">A complete repair shop in your pocket &mdash; work orders, customer records, parts, and invoices, with SMS customer updates that go out automatically.</p>
+                <span class="badge badge-dev">In Active Development</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="app-body">
+
+        <h2>Overview</h2>
+        <p>
+            FullStroke is purpose-built for the independent mechanic and small repair shop &mdash; outdoor power equipment, small engines, marine, powersports, and the long tail of speciality repair where the mainstream automotive shop-management software is overkill and the spreadsheets are a mess.
+        </p>
+        <p>
+            One app, one customer record, one running list of what needs to happen today.
+        </p>
+
+        <h2>What it handles</h2>
+        <ul>
+            <li><strong>Work order management</strong> &mdash; create, track, and close repair jobs with status, photos, and notes attached.</li>
+            <li><strong>Customer records</strong> &mdash; every customer, every machine, every job they&rsquo;ve brought you, in a searchable history.</li>
+            <li><strong>Parts inventory</strong> &mdash; track parts on hand, reorder thresholds, and which parts went into which job.</li>
+            <li><strong>Invoicing &amp; estimates</strong> &mdash; professional-looking invoices generated from the work order itself &mdash; no double entry.</li>
+            <li><strong>Automated SMS updates</strong> &mdash; customers get a text when their machine is checked in, diagnosed, ready for pickup, or has a quote ready. Powered by the <strong>Twilio</strong> API.</li>
+            <li><strong>Shop dashboard</strong> &mdash; what&rsquo;s in the bay, what&rsquo;s waiting on parts, what&rsquo;s ready for pickup, all in one view.</li>
+        </ul>
+
+        <h2>Why automated SMS</h2>
+        <p>
+            Half the phone calls in a small repair shop are customers asking &ldquo;is my mower ready yet?&rdquo; FullStroke replaces those calls with a short, automatic text at each status change. Customer phone numbers are passed to the Twilio API solely for message delivery &mdash; we don&rsquo;t store carrier data or use the number for any other purpose. Customers can reply STOP to opt out at any time.
+        </p>
+
+        <h2>Privacy &amp; data</h2>
+        <p>
+            Shop data, customer records, and inventory are stored securely via <strong>Supabase</strong>. Shop owners control their own data and can export or delete it through our <a href="delete-data.html">data deletion portal</a>. Full details in the <a href="privacy.html">Privacy Policy</a>.
+        </p>
+
+        <div class="cta-card cta-blue">
+            <div class="cta-title">In active development</div>
+            <p class="cta-sub">FullStroke is being built with a small group of pilot shops. If you run a repair business and want to be part of the rollout, request a demo and we&rsquo;ll set up a call.</p>
+            <div class="cta-actions">
+                <a href="demo.html" class="btn btn-primary-blue">Request a Demo</a>
+            </div>
+        </div>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-company">Lazy B Studios LLC</div>
+        <div class="footer-address">940 O'Neal Ln, Baton Rouge, LA 70816</div>
+        <div>
+            <a href="index.html">Home</a> &nbsp;&middot;&nbsp;
+            <a href="privacy.html" class="footer-privacy">Privacy Policy</a> &nbsp;&middot;&nbsp;
+            <a href="terms.html">Terms of Service</a> &nbsp;&middot;&nbsp;
+            <a href="delete-data.html">Delete My Data</a> &nbsp;&middot;&nbsp;
+            <a href="mailto:support@lazybstudios.com">Contact</a>
+        </div>
+    </footer>
+
+</body>
+</html>
