@@ -26,7 +26,7 @@
             </div>
             <div class="hero-text">
                 <h1 class="app-title">Full Stroke</h1>
-                <p class="app-tagline">A complete repair shop in your pocket &mdash; work orders, customer records, parts, and invoices, with SMS customer updates that go out automatically.</p>
+                <p class="app-tagline">A complete repair shop in your pocket &mdash; work orders, customers, and parts, with an in-app AI assistant on tap.</p>
                 <span class="badge badge-dev">In Active Development</span>
             </div>
         </div>
@@ -42,24 +42,23 @@
             One app, one customer record, one running list of what needs to happen today.
         </p>
 
-        <h2>What it handles</h2>
+        <h2>What it handles today</h2>
         <ul>
-            <li><strong>Work order management</strong> &mdash; create, track, and close repair jobs with status, photos, and notes attached.</li>
-            <li><strong>Customer records</strong> &mdash; every customer, every machine, every job they&rsquo;ve brought you, in a searchable history.</li>
-            <li><strong>Parts inventory</strong> &mdash; track parts on hand, reorder thresholds, and which parts went into which job.</li>
-            <li><strong>Invoicing &amp; estimates</strong> &mdash; professional-looking invoices generated from the work order itself &mdash; no double entry.</li>
-            <li><strong>Automated SMS updates</strong> &mdash; customers get a text when their machine is checked in, diagnosed, ready for pickup, or has a quote ready. Powered by the <strong>Twilio</strong> API.</li>
-            <li><strong>Shop dashboard</strong> &mdash; what&rsquo;s in the bay, what&rsquo;s waiting on parts, what&rsquo;s ready for pickup, all in one view.</li>
+            <li><strong>Work order tickets</strong> &mdash; create, track, and close repair jobs.</li>
+            <li><strong>Customer records</strong> &mdash; searchable history of every customer and the work you&rsquo;ve done for them.</li>
+            <li><strong>Parts</strong> &mdash; track the parts you stock and the parts you use.</li>
+            <li><strong>AI assistant</strong> &mdash; an in-app helper for shop owners, baked right into the workflow.</li>
+            <li><strong>Shop dashboard</strong> &mdash; what&rsquo;s in the bay, what&rsquo;s waiting, what&rsquo;s ready, all in one view.</li>
         </ul>
 
-        <h2>Why automated SMS</h2>
+        <h2>On the roadmap</h2>
         <p>
-            Half the phone calls in a small repair shop are customers asking &ldquo;is my mower ready yet?&rdquo; Full Stroke replaces those calls with a short, automatic text at each status change. Customer phone numbers are passed to the Twilio API solely for message delivery &mdash; we don&rsquo;t store carrier data or use the number for any other purpose. Customers can reply STOP to opt out at any time.
+            Modules planned but not yet live: full invoicing &amp; estimates generated from work orders, reorder thresholds and supplier records for parts, and automated customer SMS updates (&ldquo;your mower is ready for pickup&rdquo;) once a third-party SMS provider is integrated. None of these are wired in yet &mdash; they&rsquo;re on the build list.
         </p>
 
         <h2>Privacy &amp; data</h2>
         <p>
-            Shop data, customer records, and inventory are stored securely via <strong>Supabase</strong>. Shop owners control their own data and can export or delete it through our <a href="delete-data.html">data deletion portal</a>. Full details in the <a href="privacy.html">Privacy Policy</a>.
+            Shop data, customer records, and parts are stored securely via <strong>Supabase</strong>. Shop owners control their own data and can export or delete it through our <a href="delete-data.html">data deletion portal</a>. Full details in the <a href="privacy.html">Privacy Policy</a>.
         </p>
 
         <div class="cta-card cta-blue">

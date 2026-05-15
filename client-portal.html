@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#1a1a2e">
-    <meta name="description" content="Join the Lazy B Studios Beta Lab — early access to our upcoming apps">
-    <title>Join the Beta Lab | Lazy B Studios LLC</title>
+    <meta name="description" content="Enterprise Client Portal — Lazy B Studios LLC">
+    <title>Client Portal | Lazy B Studios LLC</title>
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9IiMxYTFhMmUiLz48dGV4dCB4PSIyNTYiIHk9IjMwMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxCPC90ZXh0Pjwvc3ZnPg==">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <style>
@@ -78,7 +78,7 @@
             pointer-events: none;
         }
 
-        .inner { position: relative; z-index: 1; max-width: 480px; margin: 0 auto; }
+        .inner { position: relative; z-index: 1; max-width: 440px; margin: 0 auto; }
 
         .eyebrow {
             font-size: 0.66rem;
@@ -91,7 +91,7 @@
 
         h1 {
             font-family: 'DM Serif Display', Georgia, serif;
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             font-weight: 400;
             letter-spacing: -0.5px;
             margin-bottom: 12px;
@@ -108,11 +108,11 @@
 
         .form-input {
             width: 100%;
-            background: rgba(255,255,255,0.06);
-            border: 1px solid rgba(255,255,255,0.13);
+            background: rgba(0,0,0,0.28);
+            border: 1px solid rgba(255,160,0,0.22);
             border-radius: 10px;
             padding: 12px 16px;
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: #fff;
             font-family: 'DM Sans', sans-serif;
             outline: none;
@@ -120,15 +120,9 @@
         }
 
         .form-input::placeholder { color: rgba(255,255,255,0.28); }
-        .form-input:focus { background: rgba(255,255,255,0.08); border-color: rgba(255,160,0,0.55); }
+        .form-input:focus { background: rgba(0,0,0,0.38); border-color: rgba(255,160,0,0.55); }
 
-        select.form-input {
-            appearance: none;
-            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='rgba(255,255,255,0.4)' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14 2.451 5.658C2.185 5.355 2.403 5 2.8 5h10.4c.397 0 .615.355.349.658l-4.796 5.482a1 1 0 0 1-1.507 0z'/%3E%3C/svg%3E");
-            background-repeat: no-repeat;
-            background-position: right 16px center;
-            padding-right: 40px;
-        }
+        .form-input:disabled { opacity: 0.7; cursor: not-allowed; }
 
         .submit {
             background: #b45309;
@@ -139,30 +133,26 @@
             font-size: 0.95rem;
             font-weight: 700;
             font-family: 'DM Sans', sans-serif;
-            cursor: pointer;
-            transition: background 0.18s, transform 0.15s, box-shadow 0.18s;
+            cursor: not-allowed;
+            opacity: 0.92;
+            transition: opacity 0.18s;
             align-self: center;
-            min-width: 180px;
-            margin-top: 4px;
+            min-width: 200px;
+            margin-top: 6px;
             letter-spacing: 0.01em;
         }
 
-        .submit:hover {
-            background: #92400e;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(255,160,0,0.38);
-        }
-
-        .submit:active { transform: translateY(0); box-shadow: none; }
+        .submit:hover { opacity: 1; }
 
         .hint {
-            margin-top: 16px;
-            font-size: 0.75rem;
-            color: rgba(255,255,255,0.3);
+            margin-top: 20px;
+            font-size: 0.78rem;
+            color: rgba(255,255,255,0.35);
+            line-height: 1.65;
         }
 
-        .hint a { color: rgba(255,255,255,0.5); text-decoration: none; }
-        .hint a:hover { color: rgba(255,255,255,0.85); }
+        .hint a { color: rgba(255,160,0,0.85); text-decoration: none; font-weight: 600; }
+        .hint a:hover { color: #ffb300; }
 
         footer {
             border-top: 1px solid rgba(255,255,255,0.06);
@@ -191,7 +181,7 @@
         .footer-privacy:hover { color: #ffb733 !important; }
 
         @media (max-width: 540px) {
-            h1 { font-size: 1.75rem; }
+            h1 { font-size: 1.7rem; }
             main { padding: 48px 16px 56px; }
         }
     </style>
@@ -207,34 +197,17 @@
 
     <main>
         <div class="inner">
-            <div class="eyebrow">Beta Lab</div>
-            <h1>Join the Beta Lab</h1>
-            <p class="lead">Get early access to <strong>Bill Reminder</strong>, <strong>Golf Tracker</strong>, and the rest of our in-development apps. We&rsquo;ll let you know the moment beta builds open up.</p>
-            <form id="betaForm">
-                <input type="hidden" name="type" value="beta">
-                <input type="email" name="email" class="form-input" placeholder="your@email.com" autocomplete="email" required>
-                <select name="app" class="form-input">
-                    <option value="" disabled selected>Which app are you most interested in? (optional)</option>
-                    <optgroup label="Launching Soon">
-                        <option value="Bill Reminder">Bill Reminder</option>
-                        <option value="Golf Tracker">Golf Tracker</option>
-                    </optgroup>
-                    <optgroup label="In Development">
-                        <option value="Full Stroke">Full Stroke</option>
-                        <option value="SampleFlow">SampleFlow</option>
-                    </optgroup>
-                    <optgroup label="Research &amp; Development (Concepts)">
-                        <option value="Golden Days">Golden Days</option>
-                        <option value="Signops Pro">Signops Pro</option>
-                        <option value="Firewood Delivery">Firewood Delivery</option>
-                        <option value="Macro Dieting">Macro Dieting</option>
-                        <option value="Service Industry App">Service Industry App</option>
-                    </optgroup>
-                    <option value="Any / All">Any / All of them</option>
-                </select>
-                <button type="submit" class="submit" id="betaBtn">Join the Beta Lab</button>
+            <div class="eyebrow">Client Portal</div>
+            <h1>Chemflo Suite Sign-In</h1>
+            <p class="lead">Existing <strong>Chemflo Suite</strong> enterprise customers sign in here to access their dashboards. Secure sign-in is rolling out alongside our 2026 platform refresh.</p>
+            <form onsubmit="event.preventDefault();" aria-label="Client portal placeholder">
+                <input type="email" class="form-input" placeholder="Work email" disabled aria-disabled="true">
+                <input type="password" class="form-input" placeholder="Password" disabled aria-disabled="true">
+                <button type="button" class="submit" disabled aria-disabled="true">Sign In &mdash; Coming Soon</button>
             </form>
-            <p class="hint">Prefer email? <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a></p>
+            <p class="hint">
+                Need access right now? <a href="mailto:support@lazybstudios.com?subject=Client%20Portal%20Access">Contact support</a> and we&rsquo;ll get you set up directly.
+            </p>
         </div>
     </main>
 
@@ -251,32 +224,5 @@
         </div>
     </footer>
 
-    <script>
-        document.getElementById('betaForm').addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const btn = document.getElementById('betaBtn');
-            btn.textContent = 'Sending…';
-            btn.disabled = true;
-            try {
-                const res = await fetch('/api/contact', {
-                    method: 'POST',
-                    body: JSON.stringify(Object.fromEntries(new FormData(this))),
-                    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' }
-                });
-                if (res.ok) {
-                    btn.textContent = "You’re In!";
-                    btn.style.background = '#2e7d32';
-                    btn.style.color = '#a5d6a7';
-                    this.reset();
-                } else {
-                    btn.textContent = 'Try Again';
-                    btn.disabled = false;
-                }
-            } catch (_) {
-                btn.textContent = 'Try Again';
-                btn.disabled = false;
-            }
-        });
-    </script>
 </body>
 </html>

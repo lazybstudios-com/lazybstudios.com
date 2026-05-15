@@ -234,11 +234,11 @@ main.app-body {
 }
 
 .btn-primary-gold {
-    background: #ffa000;
-    color: #0f0f1a;
+    background: #b45309;
+    color: #ffffff;
 }
 
-.btn-primary-gold:hover { background: #ffb300; transform: translateY(-1px); }
+.btn-primary-gold:hover { background: #92400e; transform: translateY(-1px); }
 
 .btn-primary-blue {
     background: #1565c0;
