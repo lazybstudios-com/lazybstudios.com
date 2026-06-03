@@ -13,6 +13,8 @@
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
+        html { scroll-behavior: smooth; }
+
         body {
             font-family: 'DM Sans', system-ui, sans-serif;
             background: #0f0f1a;
@@ -170,7 +172,8 @@
             padding: 48px 20px 60px;
         }
 
-        .section-group { margin-bottom: 48px; }
+        .section-group { margin-bottom: 48px; scroll-margin-top: 150px; }
+        #public-apps, #live, #in-development, #rd { scroll-margin-top: 150px; }
         .section-group:last-child { margin-bottom: 0; }
 
         .section-title {

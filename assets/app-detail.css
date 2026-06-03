@@ -196,87 +196,71 @@ main.app-body {
 
 /* ── CTA ── */
 .cta-card {
-    margin-top: 40px;
-    padding: 26px 24px;
-    background: linear-gradient(140deg, rgba(255,160,0,0.06) 0%, rgba(15,15,26,0.55) 70%);
-    border: 1px solid rgba(255,160,0,0.18);
-    border-radius: 14px;
-}
-
-.cta-card.cta-blue {
-    background: linear-gradient(140deg, rgba(100,181,246,0.07) 0%, rgba(15,15,26,0.55) 70%);
-    border-color: rgba(100,181,246,0.22);
-}
-
-.cta-card.cta-green {
-    background: linear-gradient(140deg, rgba(46,125,50,0.09) 0%, rgba(15,15,26,0.55) 70%);
-    border-color: rgba(129,199,132,0.28);
+    margin-top: 48px;
+    padding: 32px 28px;
+    background: linear-gradient(145deg, rgba(30, 64, 175, 0.08) 0%, rgba(15, 15, 26, 0.6) 70%);
+    border: 1px solid rgba(100, 181, 246, 0.2);
+    border-radius: 16px;
 }
 
 .cta-title {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
     font-weight: 400;
-    margin-bottom: 6px;
-    color: rgba(255,255,255,0.95);
+    margin-bottom: 8px;
+    color: rgba(255, 255, 255, 0.95);
 }
 
 .cta-sub {
-    font-size: 0.88rem;
-    color: rgba(255,255,255,0.65);
-    line-height: 1.6;
-    margin-bottom: 16px;
+    font-size: 0.92rem;
+    color: rgba(255, 255, 255, 0.65);
+    line-height: 1.65;
+    margin-bottom: 24px;
+    max-width: 580px;
 }
 
 .cta-actions {
     display: flex;
-    gap: 10px;
+    gap: 12px;
     flex-wrap: wrap;
+    align-items: center;
 }
 
 .btn {
-    display: inline-block;
-    font-size: 0.86rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.88rem;
     font-weight: 700;
     text-decoration: none;
-    border-radius: 9px;
-    padding: 10px 20px;
-    transition: background 0.18s, border-color 0.18s, transform 0.15s;
+    border-radius: 10px;
+    padding: 12px 24px;
+    transition: background 0.18s, border-color 0.18s, transform 0.15s, box-shadow 0.18s;
     border: 1px solid transparent;
+    font-family: 'DM Sans', sans-serif;
+    white-space: nowrap;
 }
 
-.btn-primary-gold {
-    background: #b45309;
+.btn-primary-blue {
+    background: #1d4ed8;
     color: #ffffff;
 }
 
-.btn-primary-gold:hover { background: #92400e; transform: translateY(-1px); }
-
-.btn-primary-blue {
-    background: #1565c0;
-    color: #fff;
-}
-
-.btn-primary-blue:hover { background: #1976d2; transform: translateY(-1px); }
-
-.btn-outline {
-    color: rgba(206,147,216,0.92);
-    border-color: rgba(206,147,216,0.32);
-}
-
-.btn-outline:hover {
-    background: rgba(206,147,216,0.1);
-    border-color: rgba(206,147,216,0.6);
+.btn-primary-blue:hover {
+    background: #1e40af;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(29, 78, 216, 0.3);
 }
 
 .btn-outline-blue {
-    color: #64b5f6;
-    border-color: rgba(100,181,246,0.32);
+    color: #60a5fa;
+    border-color: rgba(96, 165, 250, 0.3);
 }
 
 .btn-outline-blue:hover {
-    background: rgba(100,181,246,0.08);
-    border-color: rgba(100,181,246,0.55);
+    background: rgba(96, 165, 250, 0.08);
+    border-color: rgba(96, 165, 250, 0.6);
+    transform: translateY(-1px);
 }
 
 /* ── GOOGLE PLAY (disabled / Coming Soon) ── */
