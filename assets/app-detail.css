@@ -205,10 +205,11 @@ main.app-body {
 
 .cta-title {
     font-family: 'DM Serif Display', Georgia, serif;
-    font-size: 1.4rem;
+    font-size: 1.8rem;
     font-weight: 400;
-    margin-bottom: 8px;
-    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 12px;
+    color: #ffffff;
+    display: block;
 }
 
 .cta-sub {
