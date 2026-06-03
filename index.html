@@ -3,9 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self';">
     <meta name="theme-color" content="#1a1a2e">
     <meta name="description" content="Lazy B Studios LLC — Focused software solutions for consumer utility and industrial precision.">
     <title>Lazy B Studios LLC</title>
+    <link rel="manifest" href="manifest.json">
     <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiB2aWV3Qm94PSIwIDAgNTEyIDUxMiI+PHJlY3Qgd2lkdGg9IjUxMiIgaGVpZ2h0PSI1MTIiIHJ4PSIxMDAiIGZpbGw9IiMxYTFhMmUiLz48dGV4dCB4PSIyNTYiIHk9IjMwMCIgZm9udC1mYW1pbHk9Ikdlb3JnaWEsc2VyaWYiIGZvbnQtc2l6ZT0iMjQwIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkxCPC90ZXh0Pjwvc3ZnPg==">
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <style>
@@ -16,6 +18,18 @@
             background: #0f0f1a;
             color: #fff;
             min-height: 100vh;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
 
         /* ── NAV ── */
@@ -50,12 +64,12 @@
         .nav-contact {
             font-size: 0.82rem;
             font-weight: 500;
-            color: rgba(255,255,255,0.48);
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
             transition: color 0.18s;
         }
 
-        .nav-contact:hover { color: rgba(255,255,255,0.85); }
+        .nav-contact:hover { color: rgba(255,255,255,0.95); }
 
         .nav-links {
             display: flex;
@@ -66,13 +80,13 @@
         .nav-link {
             font-size: 0.82rem;
             font-weight: 500;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
             transition: color 0.18s;
             white-space: nowrap;
         }
 
-        .nav-link:hover { color: rgba(255,255,255,0.88); }
+        .nav-link:hover { color: rgba(255,255,255,0.95); }
 
         .nav-cta {
             display: inline-block;
@@ -137,13 +151,13 @@
             font-family: 'DM Serif Display', Georgia, serif;
             font-size: 1.3rem;
             font-weight: 400;
-            color: rgba(255,255,255,0.85);
+            color: rgba(255,255,255,0.9);
             margin-bottom: 10px;
         }
 
         .tagline {
             font-size: 0.93rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.6);
             max-width: 420px;
             margin: 0 auto;
             line-height: 1.65;
@@ -164,7 +178,7 @@
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 0.19em;
-            color: rgba(255,255,255,0.78);
+            color: rgba(255,255,255,0.85);
             margin-bottom: 16px;
             display: flex;
             align-items: center;
@@ -175,7 +189,7 @@
             content: '';
             flex: 1;
             height: 1px;
-            background: rgba(255,255,255,0.08);
+            background: rgba(255,255,255,0.12);
         }
 
         /* ── APP CARD ── */
@@ -259,7 +273,7 @@
 
         .app-desc {
             font-size: 0.84rem;
-            color: rgba(255,255,255,0.47);
+            color: rgba(255,255,255,0.6);
             line-height: 1.6;
             margin-bottom: 12px;
         }
@@ -342,6 +356,11 @@
             transition: opacity 0.2s, border-color 0.2s;
         }
 
+        .play-store-btn:focus {
+            outline: 2px solid #64b5f6;
+            outline-offset: 2px;
+        }
+
         .play-store-btn[aria-disabled="true"]:hover {
             opacity: 0.78;
             border-color: rgba(255,255,255,0.34);
@@ -366,7 +385,7 @@
             font-weight: 500;
             letter-spacing: 0.05em;
             text-transform: uppercase;
-            color: rgba(255,255,255,0.72);
+            color: rgba(255,255,255,0.8);
         }
 
         .play-btn-big {
@@ -378,7 +397,7 @@
         .coming-soon-note {
             font-size: 0.7rem;
             font-weight: 600;
-            color: rgba(255,160,0,0.78);
+            color: rgba(255,160,0,0.85);
             letter-spacing: 0.06em;
             text-transform: uppercase;
         }
@@ -404,14 +423,14 @@
         .rd-name {
             font-weight: 600;
             font-size: 0.92rem;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.9);
             flex-shrink: 0;
             min-width: 175px;
         }
 
         .rd-desc {
             font-size: 0.82rem;
-            color: rgba(255,255,255,0.44);
+            color: rgba(255,255,255,0.6);
             line-height: 1.55;
             flex: 1;
         }
@@ -420,7 +439,7 @@
             display: inline-block;
             font-size: 0.55rem;
             font-weight: 700;
-            color: rgba(220,60,60,0.78);
+            color: rgba(220,60,60,0.85);
             letter-spacing: 0.12em;
             text-transform: uppercase;
             margin-left: 8px;
@@ -455,12 +474,12 @@
             font-size: 1.55rem;
             font-weight: 400;
             margin-bottom: 8px;
-            color: rgba(255,255,255,0.92);
+            color: rgba(255,255,255,0.95);
         }
 
         .portal-subtext {
             font-size: 0.88rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.6);
             line-height: 1.6;
             max-width: 440px;
             margin: 0 auto 22px;
@@ -496,11 +515,11 @@
         .portal-note {
             margin-top: 14px;
             font-size: 0.72rem;
-            color: rgba(255,255,255,0.35);
+            color: rgba(255,255,255,0.45);
         }
 
         .portal-note a {
-            color: rgba(255,160,0,0.78);
+            color: rgba(255,160,0,0.85);
             text-decoration: none;
         }
 
@@ -520,10 +539,11 @@
             transition: border-color 0.2s, background 0.2s;
         }
 
-        .form-input::placeholder { color: rgba(255,255,255,0.28); }
+        .form-input::placeholder { color: rgba(255,255,255,0.45); }
 
         .form-input:focus {
             background: rgba(255,255,255,0.08);
+            border-color: #64b5f6;
         }
 
         .form-row {
@@ -585,7 +605,7 @@
 
         .section-subtext {
             font-size: 0.95rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.6);
             max-width: 420px;
             margin: 0 auto 28px;
             line-height: 1.65;
@@ -658,7 +678,7 @@
             min-width: 200px;
         }
 
-        .beta-form .form-input:focus { border-color: rgba(255,160,0,0.55); }
+        .beta-form .form-input:focus { border-color: rgba(255,160,0,0.7); }
 
         .beta-submit-btn {
             background: #ffa000;
@@ -685,23 +705,23 @@
         .form-hint {
             margin-top: 14px;
             font-size: 0.75rem;
-            color: rgba(255,255,255,0.25);
+            color: rgba(255,255,255,0.45);
         }
 
         .form-hint a {
-            color: rgba(255,255,255,0.4);
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
             transition: color 0.18s;
         }
 
-        .form-hint a:hover { color: rgba(255,255,255,0.7); }
+        .form-hint a:hover { color: rgba(255,255,255,0.85); }
 
         /* ── FOOTER ── */
         footer {
             border-top: 1px solid rgba(255,255,255,0.06);
             padding: 40px 20px 32px;
             text-align: center;
-            color: rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.5);
             font-size: 0.8rem;
             line-height: 1.75;
         }
@@ -709,20 +729,20 @@
         .footer-company {
             font-weight: 600;
             font-size: 0.88rem;
-            color: rgba(255,255,255,0.52);
+            color: rgba(255,255,255,0.65);
             margin-bottom: 4px;
         }
 
-        .footer-address { color: rgba(255,255,255,0.42); margin-bottom: 16px; }
+        .footer-address { color: rgba(255,255,255,0.55); margin-bottom: 16px; }
         .footer-links   { margin-bottom: 12px; }
 
         footer a {
-            color: rgba(255,255,255,0.38);
+            color: rgba(255,255,255,0.5);
             text-decoration: none;
             transition: color 0.18s;
         }
 
-        footer a:hover { color: rgba(255,255,255,0.72); }
+        footer a:hover { color: rgba(255,255,255,0.85); }
 
         .footer-privacy {
             color: #ffa000 !important;
@@ -786,7 +806,7 @@
                     <p class="app-desc">Bill Reminder keeps every recurring payment organized in a clean dashboard, with smart due-date alerts so you never miss a bill again. Set it up once and stay on top of your finances without any ongoing effort.</p>
                     <div class="card-actions">
                         <a href="bill-reminder.html" class="learn-more-btn">Learn More</a>
-                        <span class="play-store-btn" role="button" aria-disabled="true" aria-label="Get it on Google Play — Coming Soon">
+                        <span class="play-store-btn" role="button" tabindex="0" aria-disabled="true" aria-label="Get it on Google Play — Coming Soon">
                             <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M3.6 1.5c-.4.3-.6.8-.6 1.4v18.2c0 .6.2 1.1.6 1.4l.1.1L13.8 12 3.7 1.4l-.1.1zm11.3 11.2 3.3-3.3-3.3-3.3 2.4-1.4c.9-.5 1.9-.5 2.5 0l2.6 1.5c1.1.6 1.1 1.7 0 2.4l-2.6 1.5c-.7.4-1.7.4-2.5 0l-2.4-1.4zm-1.1 1.1L4 23.4l.4.1c.5 0 1-.2 1.5-.5l11.1-6.4-3.2-3.2v-.6zm0-3.6L4.4.6l-.4.1L13.8 11l-.6-.8z"/>
                             </svg>
@@ -795,7 +815,7 @@
                                 <span class="play-btn-big">Google Play</span>
                             </span>
                         </span>
-                        <span class="play-store-btn" role="button" aria-disabled="true" aria-label="Download on the App Store — Coming Soon">
+                        <span class="play-store-btn" role="button" tabindex="0" aria-disabled="true" aria-label="Download on the App Store — Coming Soon">
                             <svg class="play-icon" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true">
                                 <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
                             </svg>
@@ -818,7 +838,7 @@
                     <p class="app-desc">Golf Tracker calculates and maintains your official World Handicap System index, making it easy to post rounds and watch your game improve over time. Compete with friends through built-in social scoring, leaderboards, and group rounds.</p>
                     <div class="card-actions">
                         <a href="golf-tracker.html" class="learn-more-btn">Learn More</a>
-                        <span class="play-store-btn" role="button" aria-disabled="true" aria-label="Get it on Google Play — Coming Soon">
+                        <span class="play-store-btn" role="button" tabindex="0" aria-disabled="true" aria-label="Get it on Google Play — Coming Soon">
                             <svg class="play-icon" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                 <path d="M3.6 1.5c-.4.3-.6.8-.6 1.4v18.2c0 .6.2 1.1.6 1.4l.1.1L13.8 12 3.7 1.4l-.1.1zm11.3 11.2 3.3-3.3-3.3-3.3 2.4-1.4c.9-.5 1.9-.5 2.5 0l2.6 1.5c1.1.6 1.1 1.7 0 2.4l-2.6 1.5c-.7.4-1.7.4-2.5 0l-2.4-1.4zm-1.1 1.1L4 23.4l.4.1c.5 0 1-.2 1.5-.5l11.1-6.4-3.2-3.2v-.6zm0-3.6L4.4.6l-.4.1L13.8 11l-.6-.8z"/>
                             </svg>
@@ -827,7 +847,7 @@
                                 <span class="play-btn-big">Google Play</span>
                             </span>
                         </span>
-                        <span class="play-store-btn" role="button" aria-disabled="true" aria-label="Download on the App Store — Coming Soon">
+                        <span class="play-store-btn" role="button" tabindex="0" aria-disabled="true" aria-label="Download on the App Store — Coming Soon">
                             <svg class="play-icon" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true">
                                 <path d="M318.7 268.7c-.2-36.7 16.4-64.4 50-84.8-18.8-26.9-47.2-41.7-84.7-44.6-35.5-2.8-74.3 20.7-88.5 20.7-15 0-49.4-19.7-76.4-19.7C63.3 141.2 4 184.8 4 273.5q0 39.3 14.4 81.2c12.8 36.7 59 126.7 107.2 125.2 25.2-.6 43-17.9 75.8-17.9 31.8 0 48.3 17.9 76.4 17.9 48.6-.7 90.4-82.5 102.6-119.3-65.2-30.7-61.7-90-61.7-91.9zm-56.6-164.2c27.3-32.4 24.8-61.9 24-72.5-24.1 1.4-52 16.4-67.9 34.9-17.5 19.8-27.8 44.3-25.6 71.9 26.1 2 49.9-11.4 69.5-34.3z"/>
                             </svg>
@@ -936,6 +956,65 @@
             </div>
         </div>
 
+        <div class="portal-card" style="margin-top:48px;">
+            <div class="portal-label">Client Portal</div>
+            <div class="portal-title">Enterprise Dashboard</div>
+            <p class="portal-subtext">Secure access for Chemflo Suite customers. Our updated portal is launching soon.</p>
+            <div class="portal-fields">
+                <form onsubmit="event.preventDefault();" aria-label="Client portal placeholder">
+                    <label for="portal-email" class="sr-only">Work email</label>
+                    <input type="email" id="portal-email" class="form-input" placeholder="Work email" disabled aria-disabled="true">
+                    
+                    <label for="portal-password" class="sr-only">Password</label>
+                    <input type="password" id="portal-password" class="form-input" placeholder="Password" disabled aria-disabled="true">
+                    
+                    <button type="button" class="portal-btn" disabled aria-disabled="true">Sign In &mdash; Coming Soon</button>
+                </form>
+            </div>
+            <p class="portal-note">
+                Need access now? <a href="mailto:support@lazybstudios.com?subject=Client%20Portal%20Access">Contact support</a>
+            </p>
+        </div>
+
+    </section>
+
+    <!-- ── ENTERPRISE DEMO SECTION ── -->
+    <section class="demo-section">
+        <div class="section-inner">
+            <div class="section-eyebrow blue">Enterprise</div>
+            <h2 class="section-heading">Chemflo Suite</h2>
+            <p class="section-subtext">Request a personalized walkthrough of our chemical ERP solution.</p>
+            <form action="demo.html" method="GET" class="demo-form" aria-label="Quick demo request">
+                <div style="display:none;" aria-hidden="true">
+                    <label for="hp_demo">Leave this field empty</label>
+                    <input type="text" id="hp_demo" name="hp_demo" tabindex="-1" autocomplete="off">
+                </div>
+                <label for="demo-email" class="sr-only">Work email</label>
+                <input type="email" id="demo-email" name="email" class="form-input" placeholder="Work email" required>
+                <button type="submit" class="demo-submit-btn">Continue &rarr;</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- ── BETA LAB ── -->
+    <section class="beta-section">
+        <div class="section-inner">
+            <div class="section-eyebrow gold">Beta Lab</div>
+            <h2 class="section-heading">Join the Beta</h2>
+            <p class="section-subtext">Get early access to Bill Reminder, Golf Tracker, and other new tools.</p>
+            <form action="beta.html" method="GET" class="beta-form" aria-label="Beta lab signup">
+                <div style="display:none;" aria-hidden="true">
+                    <label for="hp_beta">Leave this field empty</label>
+                    <input type="text" id="hp_beta" name="hp_beta" tabindex="-1" autocomplete="off">
+                </div>
+                <label for="beta-email" class="sr-only">Email address</label>
+                <input type="email" id="beta-email" name="email" class="form-input" placeholder="your@email.com" required>
+                <button type="submit" class="beta-submit-btn">Join the Beta Lab</button>
+            </form>
+            <p class="form-hint">
+                By joining, you agree to our <a href="privacy.html">Privacy Policy</a>.
+            </p>
+        </div>
     </section>
 
     <!-- ── FOOTER ── -->

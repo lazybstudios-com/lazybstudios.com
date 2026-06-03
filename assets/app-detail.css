@@ -9,6 +9,18 @@ body {
     flex-direction: column;
 }
 
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
 /* ── NAV ── */
 .site-nav {
     position: sticky;
@@ -41,12 +53,12 @@ body {
 .nav-back {
     font-size: 0.82rem;
     font-weight: 500;
-    color: rgba(255,255,255,0.48);
+    color: rgba(255,255,255,0.6);
     text-decoration: none;
     transition: color 0.18s;
 }
 
-.nav-back:hover { color: rgba(255,255,255,0.85); }
+.nav-back:hover { color: rgba(255,255,255,0.95); }
 
 /* ── HERO ── */
 .app-hero {
@@ -107,7 +119,7 @@ body {
 
 .app-tagline {
     font-size: 1rem;
-    color: rgba(255,255,255,0.62);
+    color: rgba(255,255,255,0.85);
     line-height: 1.55;
     margin-bottom: 14px;
 }
@@ -150,7 +162,7 @@ main.app-body {
 
 .app-body p {
     font-size: 0.95rem;
-    color: rgba(255,255,255,0.62);
+    color: rgba(255,255,255,0.75);
     line-height: 1.74;
     margin-bottom: 14px;
 }
@@ -163,7 +175,7 @@ main.app-body {
 
 .app-body ul li {
     font-size: 0.93rem;
-    color: rgba(255,255,255,0.58);
+    color: rgba(255,255,255,0.7);
     line-height: 1.7;
     padding-left: 20px;
     position: relative;
@@ -211,7 +223,7 @@ main.app-body {
 
 .cta-sub {
     font-size: 0.88rem;
-    color: rgba(255,255,255,0.55);
+    color: rgba(255,255,255,0.65);
     line-height: 1.6;
     margin-bottom: 16px;
 }
@@ -280,12 +292,13 @@ main.app-body {
     text-decoration: none;
     font-family: 'DM Sans', sans-serif;
     cursor: not-allowed;
-    opacity: 0.62;
+    opacity: 0.65;
     user-select: none;
     transition: opacity 0.2s, border-color 0.2s;
 }
 
 .play-store-btn:hover { opacity: 0.78; border-color: rgba(255,255,255,0.34); }
+.play-store-btn:focus { outline: 2px solid #64b5f6; outline-offset: 2px; }
 
 .play-icon { width: 20px; height: 22px; flex-shrink: 0; color: #fff; }
 
@@ -296,7 +309,7 @@ main.app-body {
     font-weight: 500;
     letter-spacing: 0.05em;
     text-transform: uppercase;
-    color: rgba(255,255,255,0.72);
+    color: rgba(255,255,255,0.8);
 }
 
 .play-btn-big {
@@ -310,26 +323,26 @@ footer.site-footer {
     border-top: 1px solid rgba(255,255,255,0.06);
     padding: 36px 20px 30px;
     text-align: center;
-    color: rgba(255,255,255,0.3);
+    color: rgba(255,255,255,0.45);
     font-size: 0.78rem;
     line-height: 1.72;
 }
 
 .footer-company {
     font-weight: 600;
-    color: rgba(255,255,255,0.5);
+    color: rgba(255,255,255,0.6);
     margin-bottom: 4px;
 }
 
-.footer-address { color: rgba(255,255,255,0.3); margin-bottom: 14px; }
+.footer-address { color: rgba(255,255,255,0.45); margin-bottom: 14px; }
 
 footer.site-footer a {
-    color: rgba(255,255,255,0.38);
+    color: rgba(255,255,255,0.5);
     text-decoration: none;
     transition: color 0.18s;
 }
 
-footer.site-footer a:hover { color: rgba(255,255,255,0.72); }
+footer.site-footer a:hover { color: rgba(255,255,255,0.85); }
 
 .footer-privacy { color: #ffa000 !important; font-weight: 600; }
 .footer-privacy:hover { color: #ffb733 !important; }

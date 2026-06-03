@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self';">
     <meta name="theme-color" content="#1a1a2e">
     <meta name="description" content="Request a Demo — Lazy B Studios LLC enterprise solutions">
     <title>Request a Demo | Lazy B Studios LLC</title>
@@ -18,6 +19,18 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
 
         .site-nav {
@@ -51,12 +64,12 @@
         .nav-back {
             font-size: 0.82rem;
             font-weight: 500;
-            color: rgba(255,255,255,0.48);
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
             transition: color 0.18s;
         }
 
-        .nav-back:hover { color: rgba(255,255,255,0.85); }
+        .nav-back:hover { color: rgba(255,255,255,0.95); }
 
         main {
             flex: 1;
@@ -99,7 +112,7 @@
 
         .lead {
             font-size: 0.95rem;
-            color: rgba(255,255,255,0.55);
+            color: rgba(255,255,255,0.65);
             margin: 0 auto 32px;
             line-height: 1.65;
         }
@@ -119,8 +132,8 @@
             transition: border-color 0.2s, background 0.2s;
         }
 
-        .form-input::placeholder { color: rgba(255,255,255,0.28); }
-        .form-input:focus { background: rgba(255,255,255,0.08); border-color: rgba(100,181,246,0.55); }
+        .form-input::placeholder { color: rgba(255,255,255,0.45); }
+        .form-input:focus { background: rgba(255,255,255,0.08); border-color: #64b5f6; }
 
         .form-row { display: flex; gap: 10px; flex-wrap: wrap; }
         .form-row .form-input { flex: 1; min-width: 140px; }
@@ -162,38 +175,38 @@
         .hint {
             margin-top: 16px;
             font-size: 0.75rem;
-            color: rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.45);
         }
 
         .hint a {
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
         }
 
-        .hint a:hover { color: rgba(255,255,255,0.85); }
+        .hint a:hover { color: rgba(255,255,255,0.95); }
 
         footer {
             border-top: 1px solid rgba(255,255,255,0.06);
             padding: 32px 20px 28px;
             text-align: center;
-            color: rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.45);
             font-size: 0.78rem;
             line-height: 1.7;
         }
 
         .footer-company {
             font-weight: 600;
-            color: rgba(255,255,255,0.5);
+            color: rgba(255,255,255,0.65);
             margin-bottom: 4px;
         }
 
         footer a {
-            color: rgba(255,255,255,0.38);
+            color: rgba(255,255,255,0.5);
             text-decoration: none;
             transition: color 0.18s;
         }
 
-        footer a:hover { color: rgba(255,255,255,0.72); }
+        footer a:hover { color: rgba(255,255,255,0.85); }
 
         .footer-privacy { color: #ffa000 !important; font-weight: 600; }
         .footer-privacy:hover { color: #ffb733 !important; }
@@ -220,11 +233,21 @@
             <p class="lead">Tell us about your project and we&rsquo;ll get back to you within one business day.</p>
             <form id="demoForm">
                 <input type="hidden" name="type" value="demo">
-                <div class="form-row">
-                    <input type="text"  name="name"  class="form-input" placeholder="Your name" required>
-                    <input type="email" name="email" class="form-input" placeholder="Work email" required>
+                <div style="display:none;" aria-hidden="true">
+                    <label for="hp_demo">Leave this field empty</label>
+                    <input type="text" id="hp_demo" name="hp_demo" tabindex="-1" autocomplete="off">
                 </div>
-                <select name="app" class="form-input">
+                
+                <div class="form-row">
+                    <label for="name" class="sr-only">Full Name</label>
+                    <input type="text" id="name" name="name" class="form-input" placeholder="Your name" required>
+                    
+                    <label for="email" class="sr-only">Work Email</label>
+                    <input type="email" id="email" name="email" class="form-input" placeholder="Work email" required>
+                </div>
+                
+                <label for="app" class="sr-only">Solution of interest</label>
+                <select id="app" name="app" class="form-input">
                     <option value="" disabled selected>Which solution? (optional)</option>
                     <optgroup label="Live">
                         <option value="Chemflo Suite">Chemflo Suite</option>
@@ -239,7 +262,10 @@
                     </optgroup>
                     <option value="Other">Other / Not sure yet</option>
                 </select>
-                <textarea name="message" class="form-input" placeholder="Tell us about your project (optional)" rows="4"></textarea>
+                
+                <label for="message" class="sr-only">Message</label>
+                <textarea id="message" name="message" class="form-input" placeholder="Tell us about your project (optional)" rows="4"></textarea>
+                
                 <button type="submit" class="submit" id="demoBtn">Send Request</button>
             </form>
             <p class="hint">Prefer email? <a href="mailto:support@lazybstudios.com">support@lazybstudios.com</a></p>
@@ -248,7 +274,7 @@
 
     <footer>
         <div class="footer-company">Lazy B Studios LLC</div>
-        <div style="color:rgba(255,255,255,0.3); margin-bottom:14px;">
+        <div style="color:rgba(255,255,255,0.45); margin-bottom:14px;">
             940 O'Neal Ln, Baton Rouge, LA 70816
         </div>
         <div>

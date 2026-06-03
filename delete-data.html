@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; script-src 'self' 'unsafe-inline'; connect-src 'self';">
     <meta name="theme-color" content="#1a1a2e">
     <meta name="description" content="Request Data Deletion — Lazy B Studios LLC">
     <title>Delete Data | Lazy B Studios LLC</title>
@@ -16,6 +17,18 @@
             background: #0f0f1a;
             color: #fff;
             min-height: 100vh;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
         }
 
         /* ── STICKY NAV ── */
@@ -50,12 +63,12 @@
         .nav-back {
             font-size: 0.82rem;
             font-weight: 500;
-            color: rgba(255,255,255,0.48);
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
             transition: color 0.18s;
         }
 
-        .nav-back:hover { color: rgba(255,255,255,0.85); }
+        .nav-back:hover { color: rgba(255,255,255,0.95); }
 
         /* ── CONTENT ── */
         .content {
@@ -74,13 +87,13 @@
 
         .meta-line {
             font-size: 0.82rem;
-            color: rgba(255,255,255,0.35);
+            color: rgba(255,255,255,0.45);
             margin-bottom: 36px;
         }
 
         p {
             font-size: 1rem;
-            color: rgba(255,255,255,0.6);
+            color: rgba(255,255,255,0.65);
             line-height: 1.65;
             margin-bottom: 24px;
         }
@@ -102,7 +115,7 @@
             display: block;
             font-size: 0.85rem;
             font-weight: 600;
-            color: rgba(255,255,255,0.8);
+            color: rgba(255,255,255,0.85);
             margin-bottom: 8px;
         }
 
@@ -162,14 +175,14 @@
 
         .submit-btn:disabled {
             background: rgba(255,255,255,0.1);
-            color: rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.4);
             cursor: not-allowed;
             transform: none;
         }
 
         .form-hint {
             font-size: 0.75rem;
-            color: rgba(255,255,255,0.35);
+            color: rgba(255,255,255,0.45);
             margin-top: 16px;
             text-align: center;
             line-height: 1.5;
@@ -193,11 +206,11 @@
             border-top: 1px solid rgba(255,255,255,0.06);
             padding: 40px 24px 32px;
             text-align: center;
-            color: rgba(255,255,255,0.3);
+            color: rgba(255,255,255,0.45);
             font-size: 0.8rem;
         }
 
-        footer a { color: rgba(255,255,255,0.38); text-decoration: none; }
+        footer a { color: rgba(255,255,255,0.6); text-decoration: none; }
         footer a:hover { color: #fff; }
 
         @media (max-width: 540px) {
@@ -225,6 +238,10 @@
         <div id="formContainer">
             <form class="deletion-form" id="deletionForm">
                 <input type="hidden" name="type" value="deletion">
+                <div style="display:none;" aria-hidden="true">
+                    <label for="hp_del">Leave this field empty</label>
+                    <input type="text" id="hp_del" name="hp_del" tabindex="-1" autocomplete="off">
+                </div>
                 
                 <div class="form-group">
                     <label for="name">Full Name</label>
